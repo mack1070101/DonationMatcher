@@ -2,6 +2,7 @@ package models;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import java.util.UUID;
 
 /**
  * Created by mackenzie on 07/08/17.
@@ -10,10 +11,12 @@ import javax.mail.internet.InternetAddress;
  * The person object represents a person, and their personal information,
  * whether they are a customer of recipient of food
  *
- * @TODO validate data better
+ * @TODO validate data better, including empty fields
+ * @TODO perhaps tear out almost all getters and setters
  */
 public class Person {
 
+    private UUID uuid;
     private String firstName;
     private String lastName;
     private String street;
@@ -42,6 +45,7 @@ public class Person {
         boolean emailValidity = checkEmail(email);
         if(!emailValidity) throw new IllegalArgumentException();
 
+        this.uuid = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;
@@ -199,5 +203,9 @@ public class Person {
      */
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public UUID getUuid() {
+        return uuid;
     }
 }
