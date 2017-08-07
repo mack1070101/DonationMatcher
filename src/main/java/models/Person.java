@@ -10,6 +10,7 @@ import javax.mail.internet.InternetAddress;
  * The person object represents a person, and their personal information,
  * whether they are a customer of recipient of food
  *
+ * @TODO validate data better
  */
 public class Person {
 
@@ -38,6 +39,18 @@ public class Person {
                   String phone){
 
 
+        boolean emailValidity = checkEmail(email);
+        if(!emailValidity) throw new IllegalArgumentException();
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.street = street;
+        this.state = state;
+        this.postal = postal;
+        this.country = country;
+        this.email = email;
+        this.phone = phone;
+
     }
 
     /**
@@ -50,7 +63,7 @@ public class Person {
 
         try{
             InternetAddress e = new InternetAddress(email);
-
+            e.validate();
         } catch (AddressException e) {
             result = false;
         }
