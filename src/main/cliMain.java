@@ -1,4 +1,3 @@
-package models;
 
 /**
  * Created by mackenzie on 07/08/17.
