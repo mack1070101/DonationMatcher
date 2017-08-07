@@ -1,5 +1,8 @@
 package models;
 
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+
 /**
  * Created by mackenzie on 07/08/17.
  * @author mackenzie
@@ -43,7 +46,16 @@ public class Person {
      * @return true if the email is valid, false if it is not
      */
     private boolean checkEmail(String email) {
-        return false;
+        boolean result = true;
+
+        try{
+            InternetAddress e = new InternetAddress(email);
+
+        } catch (AddressException e) {
+            result = false;
+        }
+
+        return result;
     }
 
     /**
