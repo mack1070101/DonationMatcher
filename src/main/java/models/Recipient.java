@@ -9,7 +9,7 @@ import java.util.UUID;
  *
  * @TODO better data validation
  *
- * The recipient class represents an event where food must be recieved, and it is owned by a person
+ * The recipient class represents an event where food must be recieved
  */
 public class Recipient {
     private UUID personId;
