@@ -53,6 +53,7 @@ public class LogicController {
             String timeZoneId = rs.getString("timeZoneId");
             Pickup p = new Pickup(personId, latitude, longitude, category,
                     pickupAt, timeZoneId);
+
             pickups.add(p);
         }
 

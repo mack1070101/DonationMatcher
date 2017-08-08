@@ -36,22 +36,19 @@ public class GeoController {
 
 
 
-    public double[ ] boundingBox(double latInDegrees, double lonInDegrees, double halfSideInKm){
+    public double[ ] boundingBox(double latInDegrees, double lonInDegrees, double distance){
         double result[] = new double[4];
         GeoHelper gh = new GeoHelper();
-        double lat = gh.deg2Rad(latInDegrees);
-        double lon = gh.deg2Rad(latInDegrees);
-        double halfSide = 1000*halfSideInKm;
+        double latApproximation = 69; // 69 miles per degree
+        double lonApproximation = Math.cos(gh.deg2Rad(latInDegrees))*latApproximation;
 
-        // Radius of Earth at given latitude
-        double radius = gh.WGS84EarthRad(lat);
-        // Radius of the parallel at given latitude
-        double pradius = radius*Math.cos(lat);
+        double deltaLat = distance/latApproximation;
+        double deltaLon = distance/lonApproximation;
 
-        result[0]= lat - halfSide/radius;
-        result[1]= lat + halfSide/radius;
-        result[2]= lon - halfSide/pradius;
-        result[3]= lon + halfSide/pradius;
+        result[0] = latInDegrees - deltaLat;
+        result[1] = latInDegrees + deltaLat;
+        result[2] = lonInDegrees - deltaLon;
+        result[3] = lonInDegrees + deltaLon;
 
         return result;
     }

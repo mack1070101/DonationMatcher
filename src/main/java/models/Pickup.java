@@ -2,7 +2,6 @@ package models;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.UUID;
 
 /**
  * Created by mackenzie on 07/08/17.
@@ -64,7 +63,7 @@ public class Pickup {
     public Pickup(String personId, double lat, double lon, int category,
                   String date, String timeZoneId){
         this.personId = personId;
-        this.longitude = lat;
+        this.latitude = lat;
         this.longitude = lon;
         this.category = category;
         Calendar cal = javax.xml.bind.DatatypeConverter.parseDateTime(date);

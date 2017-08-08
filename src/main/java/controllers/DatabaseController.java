@@ -1,9 +1,9 @@
 package controllers;
+
 import models.Pickup;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.TimeZone;
 
 /**
@@ -187,18 +187,21 @@ public class DatabaseController {
                 ") <= " +pickup.getCategory()+"";
 
         //Build distance requirement
-        String distance = "(latitude >= minLat) AND (latitude <= minLat)";
         GeoController geoController = new GeoController();
-        double lats[] = geoController.boundingBox(pickup.getLatitude(), pickup.getCategory(), side);
+        double boundingBox[] = geoController.boundingBox(pickup.getLatitude(), pickup.getLongitude(), side);
 
-        System.out.println(Arrays.toString(lats));
+        String distance = "((latitude >= "+boundingBox[0]+") AND (latitude <= "+boundingBox[1]+"))";
+        distance = distance + " AND " + "((longitude >= "+ boundingBox[2]+") AND (longitude <= "+boundingBox[3]+"))";
+
         //Build query
         String query = "SELECT * FROM RECIPIENT " +
                 "WHERE "+ dateLine + " AND " +
-                        restrictions + " " +
+                        restrictions + " AND " +
+                        distance + " " +
                 "ORDER BY restrictions DESC;" ;
 
 
+//        System.out.println(query);
 
         return statement.executeQuery(query);
     }
