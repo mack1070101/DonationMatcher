@@ -14,6 +14,17 @@ public class FileControllerTest {
     private String absFilePath = resources.getAbsolutePath();
     private FileController fileController = new FileController();
 
+
+    @Test
+    public void TestValidFileConstructor(){
+        FileController fc = new FileController(absFilePath+"/test.csv");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void TestInvalidFileConstructor(){
+        FileController fc = new FileController(absFilePath+"/tst.txt");
+    }
+
     @Test
     public void testValidFile(){
         System.out.println(absFilePath);

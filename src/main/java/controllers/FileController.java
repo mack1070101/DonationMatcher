@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
  */
 public class FileController {
 
+    private String filename;
     private Pattern pattern;
     private Matcher matcher;
 
@@ -26,6 +27,16 @@ public class FileController {
         pattern = Pattern.compile(CSV_PATTERN);
     }
 
+    public FileController(String name) {
+        pattern = Pattern.compile(CSV_PATTERN);
+        matcher = pattern.matcher(name);
+        if (!matcher.matches()) {
+            throw new IllegalArgumentException();
+        } else{
+            this.filename = name;
+        }
+
+    }
     public boolean isValid(final String filename){
         matcher = pattern.matcher(filename);
         if(!matcher.matches()){
