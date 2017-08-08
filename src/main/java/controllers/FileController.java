@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
  * Created by mackenzie on 07/08/17.
  *
  * Handles file operations, opening, reading and validation
+ *
+ * @TODO document stuff
  */
 public class FileController {
 
