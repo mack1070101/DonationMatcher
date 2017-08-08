@@ -31,4 +31,28 @@ public class PickupTest {
 
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testPickWithBlankField(){
+        Pickup p = new Pickup(UUID.randomUUID(), 37.728921, -122.324225, 45,
+                " ", "America/Los_Angeles");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testPickWithBadCategory(){
+        Pickup p = new Pickup(UUID.randomUUID(), 37.728921, -122.324225, 128,
+                "2016-11-29T16:00:00-08:00", "America/Los_Angeles");
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testPickwithBadLat(){
+         Pickup p = new Pickup(UUID.randomUUID(), 978.728921, -122.324225, 128,
+                "2016-11-29T16:00:00-08:00", "America/Los_Angeles");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testPickwithBadLon(){
+         Pickup p = new Pickup(UUID.randomUUID(), 37.728921, -10022.324225, 128,
+                "2016-11-29T16:00:00-08:00", "America/Los_Angeles");
+    }
 }

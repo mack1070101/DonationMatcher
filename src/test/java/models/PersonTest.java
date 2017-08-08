@@ -30,8 +30,8 @@ public class PersonTest {
                 "leeroy@warcraft.com", "605-555-5555");
     }
 
-    @Test
-    public void testBadPerson(){
+    @Test(expected = IllegalArgumentException.class)
+    public void testBadPersonInputs(){
         Person p = new Person("Leeroy", " ",
                 "1234 Fake St.", "CA", "94107", "US",
                 "leeroy@warcraft.com", "605-555-5555");
@@ -40,17 +40,17 @@ public class PersonTest {
     @Test
     public void testBadEmails() {
         try{
-            goodPerson.setEmail("notanemail@email");
+            goodPerson.checkEmail("notanemail@email");
         } catch(IllegalArgumentException e){
 
         }
         try{
-            goodPerson.setEmail("notanemail");
+            goodPerson.checkEmail("notanemail");
         } catch(IllegalArgumentException e){
 
         }
         try{
-            goodPerson.setEmail("      ");
+            goodPerson.checkEmail("      ");
         } catch(IllegalArgumentException e){
 
         }
@@ -58,9 +58,7 @@ public class PersonTest {
 
     @Test
     public void testGoodEmail(){
-        String oldEmail = goodPerson.getEmail();
-        goodPerson.setEmail("newEmail@google.ca");
-        assertNotEquals(oldEmail, goodPerson.getEmail());
+        assertEquals(goodPerson.checkEmail("newEmail@google.ca"), true);
     }
 
 }
