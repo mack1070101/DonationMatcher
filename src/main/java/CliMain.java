@@ -54,32 +54,43 @@ public class CliMain {
         if (outputFile.equals("")) outputFile = defaultOutputFilename;
         */
         customerCSV = "/home/mackenzie/workspace/copiaTest/src/test/java/testAssets/Customers.csv";
+        recipientCSV = "/home/mackenzie/workspace/copiaTest/src/test/java/testAssets/Recipients.csv";
 
         FileController cFC = new FileController(customerCSV);
-      //FileController rFC = new FileController(recipientCSV);
+        FileController rFC = new FileController(recipientCSV);
         DatabaseController dbC = new DatabaseController();
         dbC.createPersonsTable();
+        dbC.createPickupTable();
+        dbC.createRecipientTable();
 
-//        dbC.createPickupTable();
-//        dbC.createRecipientTable();
-
-        while(true){
-            String[] line = cFC.readLine();
-            int i = 0;
-
-            for(String str : line){
-                line[i] = str.replaceAll("'", "");
-                i++;
-            }
-
-            if(line == null){
+        //@TODO build into db controller
+        while (true) {
+            try {
+                int i = 0;
+                String[] line = cFC.readLine();
+                for (String str : line) {
+                    line[i] = str.replaceAll("'", "");
+                    i++;
+                }
+                dbC.insertIntoPersonTable(Arrays.copyOfRange(line, 0, 9));
+                dbC.insertIntoPickupTable(Arrays.copyOfRange(line, 8, 14));
+            } catch (NullPointerException e) {
                 break;
             }
-            dbC.insertIntoPersonTable(Arrays.copyOfRange(line, 0, 9));
-
-
         }
-
+        while (true) {
+            try {
+                int i = 0;
+                String[] line = rFC.readLine();
+                for (String str : line) {
+                    line[i] = str.replaceAll("'", "");
+                    i++;
+                }
+                dbC.insertIntoPersonTable(Arrays.copyOfRange(line, 0, 9));
+                dbC.insertIntoRecipientTable(Arrays.copyOfRange(line, 8, 19));
+            } catch (NullPointerException e) {
+                break;
+            }
+        }
     }
 }
-
