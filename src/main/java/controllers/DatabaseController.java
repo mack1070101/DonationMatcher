@@ -1,6 +1,10 @@
 package controllers;
 
+import models.Pickup;
+
 import java.sql.*;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
 /**
  * Created by mackenzie on 07/08/17.
@@ -82,9 +86,40 @@ public class DatabaseController {
         return this.statement.executeQuery("SELECT * FROM pickup;");
      }
 
-     public ResultSet fetchSuitableRecipients(int restrictions) throws SQLException {
+     public ResultSet fetchSuitableRecipients(Pickup pickup) throws SQLException {
+         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E"); // Day of week
+         String dayOfWeek = simpleDateFormat.format(pickup.getPickupAt());
+         simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+         simpleDateFormat.setTimeZone(TimeZone.getTimeZone(pickup.getTimeZoneId()));
+         String time = simpleDateFormat.format(pickup.getPickupAt());
+         int timeAsInt = Integer.parseInt(time.substring(0,2));
+         int binaryRepTime = 1 << timeAsInt -8;
+
+         String dateLine;
+
+         if (dayOfWeek.equals("Sun")) {
+             dateLine = "((sundayHours & " + binaryRepTime+ ") = " + binaryRepTime + ")";
+         } else if (dayOfWeek.equals("Mon")) {
+             dateLine = "((mondayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
+         } else if (dayOfWeek.equals("Tue")) {
+             dateLine = "((tuesdayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+         } else if (dayOfWeek.equals("Wed")) {
+             dateLine = "((wednesdayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+         } else if (dayOfWeek.equals("Thu")) {
+              dateLine = "((thursdayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+         } else if (dayOfWeek.equals("Fri")) {
+             dateLine = "((fridayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+         } else if (dayOfWeek.equals("Sat")) {
+             dateLine = "((saturdayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+         } else {
+             throw new IllegalArgumentException();
+         }
+
         String query = "SELECT * FROM RECIPIENT " +
-                        ";" ;
+                        "WHERE "+ dateLine + ";" ;
+
+         System.out.println(query + time + " " + pickup.getPersonId());
+
         return statement.executeQuery(query);
      }
 }

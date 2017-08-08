@@ -41,4 +41,7 @@ public class Recipient {
         this.saturdayHours = saturdayHours;
     }
 
+    public String getPersonId() {
+        return personId;
+    }
 }

@@ -1,12 +1,13 @@
 import controllers.DatabaseController;
 import controllers.FileController;
 import controllers.LogicController;
+import models.Pickup;
+import models.Recipient;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by mackenzie on 07/08/17.
@@ -95,7 +96,13 @@ public class CliMain {
         }
 
         LogicController lc = new LogicController(dbC);
-        lc.findMatches();
-//        String[] matches = lc.findMatches();
+        HashMap<Pickup, ArrayList<Recipient>> map = lc.findMatches();
+
+        Iterator it = map.entrySet().iterator();
+
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry)it.next();
+            System.out.println(map.get(pair.getKey()).get(0).getPersonId());
+        }
     }
 }

@@ -1,13 +1,11 @@
 package controllers;
 
-import models.Person;
 import models.Pickup;
 import models.Recipient;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -26,7 +24,7 @@ public class LogicController {
         this.dbc = dbc;
     }
 
-    public void findMatches() throws SQLException {
+    public HashMap<Pickup, ArrayList<Recipient>> findMatches() throws SQLException {
         ResultSet rs = dbc.statement.executeQuery("SELECT * from pickup;");
         ArrayList<Pickup> pickups = new ArrayList<Pickup>();
         HashMap<Pickup, ArrayList<Recipient>> map = new HashMap<Pickup, ArrayList<Recipient>>();
@@ -46,7 +44,7 @@ public class LogicController {
         // Search array of pickups for suitable recipients and return them
 
         for(Pickup p : pickups){
-            rs = dbc.fetchSuitableRecipients(9);
+            rs = dbc.fetchSuitableRecipients(p);
             ArrayList<Recipient> recipients = new ArrayList<Recipient>();
 
             while (rs.next()){
@@ -70,7 +68,7 @@ public class LogicController {
                  recipients.add(r);
             }
             map.put(p, recipients);
-
         }
+        return map;
     }
 }

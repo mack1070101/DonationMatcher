@@ -45,6 +45,8 @@ public class Pickup {
     private int category;
     private Date pickupAt;
     private String timeZoneId;
+    private int day;
+    private String time;
 
     /**
      * Constructor for the pickup class
@@ -69,9 +71,4 @@ public class Pickup {
         this.pickupAt = cal.getTime();
         this.timeZoneId = timeZoneId;
     }
-/*
-    public double distanceToDropoff(Recipient R){
-        return -1.0;
-    }
- */
 }
