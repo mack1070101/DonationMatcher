@@ -3,6 +3,8 @@ package controllers;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import static org.junit.Assert.*;
 
@@ -16,12 +18,12 @@ public class FileControllerTest {
 
 
     @Test
-    public void TestValidFileConstructor(){
+    public void TestValidFileConstructor() throws FileNotFoundException {
         FileController fc = new FileController(absFilePath+"/test.csv");
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void TestInvalidFileConstructor(){
+    public void TestInvalidFileConstructor() throws FileNotFoundException {
         FileController fc = new FileController(absFilePath+"/tst.txt");
     }
 
@@ -42,5 +44,11 @@ public class FileControllerTest {
     public void testNonexistantFile(){
         boolean result = fileController.isValid(absFilePath+"/lslclkdj.csv");
         assertEquals(result, false);
+    }
+
+    @Test
+    public void testReadline() throws IOException {
+        FileController validFc = new FileController(absFilePath+"/Customers.csv");
+        validFc.readLine();
     }
 }

@@ -1,5 +1,8 @@
 import controllers.FileController;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -7,8 +10,10 @@ import java.util.Scanner;
  */
 public class CliMain {
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException {
         String defaultOutputFilename = "result.csv";
+        String customerCSV = new String();
+        String recipientCSV = new String();
 
         System.out.println(" _______  _____   _____  _____ _______      _______ _______ _______ _______");
         System.out.println(" |       |     | |_____]   |   |_____|         |    |______ |______    |   ");
@@ -19,9 +24,10 @@ public class CliMain {
 
         Scanner scanner = new Scanner(System.in);
         FileController fileController = new FileController();
+        /*
         while(true) {
             System.out.print("Enter filename of csv containing customer data: ");
-            String customerCSV = scanner.nextLine();
+            customerCSV = scanner.nextLine();
 
             if (fileController.isValid(customerCSV)){
                 break;
@@ -33,7 +39,7 @@ public class CliMain {
 
         while(true){
             System.out.print("Enter filename csv containing recipient data: ");
-            String recipientCSV = scanner.nextLine();
+            recipientCSV = scanner.nextLine();
             if(fileController.isValid(recipientCSV)) {
                 break;
             } else {
@@ -44,9 +50,19 @@ public class CliMain {
 
         String outputFile = scanner.nextLine();
         if (outputFile.equals("")) outputFile = defaultOutputFilename;
+        */
+        customerCSV = "/home/mackenzie/workspace/copiaTest/src/main/java/Customers.csv";
 
+        FileController cFC = new FileController(customerCSV);
 
-        // Further functionality to be implemented
+        while(true){
+            String line = Arrays.toString(cFC.readLine());
+            if(line == null){
+                break;
+            }
+            System.out.println(line);
+        }
+
     }
 }
 
