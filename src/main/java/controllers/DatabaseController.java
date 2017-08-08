@@ -3,6 +3,7 @@ import models.Pickup;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.TimeZone;
 
 /**
@@ -155,6 +156,9 @@ public class DatabaseController {
         int timeAsInt = Integer.parseInt(time.substring(0,2));
         int binaryRepTime = 1 << timeAsInt -8;
 
+        //Sidelength requirement
+        double side = 10 * 1.609344; // Sidelength of 10 miles converted to KM
+
         //String that will be used to build time requirement for query
         String dateLine;
 
@@ -184,12 +188,16 @@ public class DatabaseController {
 
         //Build distance requirement
         String distance = "(latitude >= minLat) AND (latitude <= minLat)";
+        GeoController geoController = new GeoController();
+        double lats[] = geoController.boundingBox(pickup.getLatitude(), pickup.getCategory(), side);
 
+        System.out.println(Arrays.toString(lats));
         //Build query
         String query = "SELECT * FROM RECIPIENT " +
                 "WHERE "+ dateLine + " AND " +
                         restrictions + " " +
                 "ORDER BY restrictions DESC;" ;
+
 
 
         return statement.executeQuery(query);
