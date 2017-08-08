@@ -15,6 +15,30 @@ import java.util.UUID;
  */
 
 public class Pickup {
+    public String getPersonId() {
+        return personId;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public int getCategory() {
+        return category;
+    }
+
+    public Date getPickupAt() {
+        return pickupAt;
+    }
+
+    public String getTimeZoneId() {
+        return timeZoneId;
+    }
+
     private final String personId;
     private double latitude;
     private double longitude;

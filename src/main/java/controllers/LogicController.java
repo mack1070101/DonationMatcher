@@ -1,11 +1,14 @@
 package controllers;
 
 import models.Person;
+import models.Pickup;
+import models.Recipient;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by mackenzie on 08/08/17.
@@ -25,26 +28,49 @@ public class LogicController {
 
     public void findMatches() throws SQLException {
         ResultSet rs = dbc.statement.executeQuery("SELECT * from pickup;");
-        ArrayList<Person> people = new ArrayList<Person>();
+        ArrayList<Pickup> pickups = new ArrayList<Pickup>();
+        HashMap<Pickup, ArrayList<Recipient>> map = new HashMap<Pickup, ArrayList<Recipient>>();
 
         while (rs.next()) {
-            String firstName = rs.getString("firstName");
-            String lastName = rs.getString("lastName");
-            String street = rs.getString("street");
-            String city = rs.getString("city");
-            String state = rs.getString("state");
-            String postal = rs.getString("postal");
-            String country = rs.getString("country");
-            String email =rs.getString("email");
-            String phone = rs.getString("phone");
-
-            people.add(new Person(firstName, lastName, street,
-                  city, state, postal, country, email,
-                  phone));
+            // Make array of pickups
+            String personId = rs.getString("personId");
+            double latitude = rs.getDouble("latitude");
+            double longitude = rs.getDouble("longitude");
+            int category = rs.getInt("categories");
+            String pickupAt = rs.getString("pickupAt");
+            String timeZoneId = rs.getString("timeZoneId");
+            Pickup p = new Pickup(personId, latitude, longitude, category,
+                    pickupAt, timeZoneId);
+            pickups.add(p);
         }
+        // Search array of pickups for suitable recipients and return them
 
-        for(Person p: people){
-            rs = dbc.fetchSuitableRecipients(p.get);
+        for(Pickup p : pickups){
+            rs = dbc.fetchSuitableRecipients(9);
+            ArrayList<Recipient> recipients = new ArrayList<Recipient>();
+
+            while (rs.next()){
+                 String personId = rs.getString("personId");
+                 double latitude = rs.getDouble("latitude");
+                 double longitude = rs.getDouble("longitude");
+                 int restrictions = rs.getInt("restrictions");
+                 int sundayHours = rs.getInt("sundayHours");
+                 int mondayHours = rs.getInt("mondayHours");
+                 int tuesdayHours = rs.getInt("tuesdayHours");
+                 int wednesdayHours = rs.getInt("wednesdayHours");
+                 int thursdayHours = rs.getInt("thursdayHours");
+                 int fridayHours = rs.getInt("fridayHours");
+                 int saturdayHours = rs.getInt("saturdayHours");
+
+                 Recipient r = new Recipient(personId, latitude, longitude,
+                     restrictions, sundayHours, mondayHours,
+                     tuesdayHours, wednesdayHours, thursdayHours,
+                     fridayHours, saturdayHours);
+
+                 recipients.add(r);
+            }
+            map.put(p, recipients);
+
         }
     }
 }

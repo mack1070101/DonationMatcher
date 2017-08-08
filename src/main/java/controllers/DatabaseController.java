@@ -1,7 +1,6 @@
 package controllers;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 /**
  * Created by mackenzie on 07/08/17.
@@ -83,17 +82,9 @@ public class DatabaseController {
         return this.statement.executeQuery("SELECT * FROM pickup;");
      }
 
-     public ArrayList<ResultSet> fetchSuitableRecipients(int restrictions) throws SQLException {
-         ArrayList<ResultSet> resultSets = new ArrayList<ResultSet>();
+     public ResultSet fetchSuitableRecipients(int restrictions) throws SQLException {
         String query = "SELECT * FROM RECIPIENT " +
-                        "WHERE restrictions = " + restrictions + ";";
-        ResultSet rs = statement.executeQuery(query);
-
-        while(rs.next()){
-            System.out.println(rs.getString("personId"));
-            resultSets.add(rs);
-         }
-
-         return resultSets;
+                        ";" ;
+        return statement.executeQuery(query);
      }
 }
