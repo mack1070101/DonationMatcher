@@ -1,10 +1,8 @@
 import controllers.DatabaseController;
 import controllers.FileController;
 import controllers.LogicController;
-import models.Pickup;
 import models.Recipient;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.*;
@@ -102,6 +100,7 @@ public class CliMain {
 
         while(it.hasNext()){
             Map.Entry pair = (Map.Entry)it.next();
+            System.out.print(pair.getKey() + " ");
             System.out.println(map.get(pair.getKey()).get(0).getPersonId());
         }
     }

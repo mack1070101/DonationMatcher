@@ -116,7 +116,9 @@ public class DatabaseController {
          }
 
         String query = "SELECT * FROM RECIPIENT " +
-                        "WHERE "+ dateLine + ";" ;
+                        "WHERE "+ dateLine + " " +
+                        "ORDER BY restrictions DESC;" ;
+
 
          System.out.println(query + time + " " + pickup.getPersonId());
 

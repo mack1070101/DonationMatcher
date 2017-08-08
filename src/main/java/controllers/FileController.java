@@ -61,11 +61,7 @@ public class FileController {
         matcher = pattern.matcher(filename);
         if(!matcher.matches()){
             return false;
-        } else if (new File(filename).exists()){
-            return true;
-        } else{
-            return false;
-        }
+        } else return new File(filename).exists();
 
     }
 }
