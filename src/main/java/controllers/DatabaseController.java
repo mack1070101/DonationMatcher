@@ -1,9 +1,7 @@
 package controllers;
 
-import models.Person;
-
 import java.sql.*;
-import java.util.Arrays;
+import java.util.ArrayList;
 
 /**
  * Created by mackenzie on 07/08/17.
@@ -81,7 +79,21 @@ public class DatabaseController {
          this.statement.executeUpdate("INSERT INTO Recipient VALUES('" + string[0] + "','" + string[1] + "'," + "'" + string[2] + "','" + string[3] + "','" + string[4] + "','" + string[5] + "'," + "'" + string[6] + "','" + string[7] + "','" + string[8] + "','" + string[9] + "','" + string[10] + "');");
      }
 
-     public ResultSet fetchAllRecipients() throws SQLException {
-        return this.statement.executeQuery("SELECT * FROM recipient;");
+     public ResultSet fetchAllPickups() throws SQLException {
+        return this.statement.executeQuery("SELECT * FROM pickup;");
+     }
+
+     public ArrayList<ResultSet> fetchSuitableRecipients(int restrictions) throws SQLException {
+         ArrayList<ResultSet> resultSets = new ArrayList<ResultSet>();
+        String query = "SELECT * FROM RECIPIENT " +
+                        "WHERE restrictions = " + restrictions + ";";
+        ResultSet rs = statement.executeQuery(query);
+
+        while(rs.next()){
+            System.out.println(rs.getString("personId"));
+            resultSets.add(rs);
+         }
+
+         return resultSets;
      }
 }

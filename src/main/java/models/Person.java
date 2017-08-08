@@ -19,7 +19,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private String street;
-    private final String city;
+    private String city;
     private String state;
     private String postal;
     private String country;

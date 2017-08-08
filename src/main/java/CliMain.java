@@ -1,5 +1,6 @@
 import controllers.DatabaseController;
 import controllers.FileController;
+import controllers.LogicController;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -92,5 +93,9 @@ public class CliMain {
                 break;
             }
         }
+
+        LogicController lc = new LogicController(dbC);
+        lc.findMatches();
+//        String[] matches = lc.findMatches();
     }
 }
