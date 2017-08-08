@@ -16,10 +16,10 @@ import java.util.UUID;
  */
 public class Person {
 
-    private UUID uuid;
     private String firstName;
     private String lastName;
     private String street;
+    private final String city;
     private String state;
     private String postal;
     private String country;
@@ -31,6 +31,7 @@ public class Person {
      * @param firstName        A person's first name
      * @param lastName         A person's last name
      * @param street           The street address where the person is located
+     * @param city
      * @param state            The state or province where the person is located
      * @param postal           The postal/zip code of the person's street address
      * @param country          The country in which the person is located
@@ -40,17 +41,17 @@ public class Person {
      * @throws IllegalArgumentException in the event of a bad argument
      */
     public Person(String firstName, String lastName, String street,
-                  String state, String postal, String country, String email,
+                  String city, String state, String postal, String country, String email,
                   String phone){
 
 
         boolean emailValidity = checkEmail(email);
         if(!emailValidity) throw new IllegalArgumentException();
 
-        this.uuid = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;
+        this.city = city;
         this.state = state;
         this.postal = postal;
         this.country = country;
@@ -77,7 +78,39 @@ public class Person {
         return result;
     }
 
-    public UUID getUuid() {
-        return uuid;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getPostal() {
+        return postal;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 }

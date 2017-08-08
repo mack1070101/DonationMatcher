@@ -1,6 +1,5 @@
 package models;
 
-import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -12,7 +11,7 @@ import java.util.UUID;
  * The recipient class represents an event where food must be recieved
  */
 public class Recipient {
-    private UUID personId;
+    private String personId;
     private double latitude;
     private double longitude;
     private int restrictions;
@@ -24,7 +23,7 @@ public class Recipient {
     private int fridayHours;
     private int saturdayHours;
 
-    public Recipient(UUID personId, double latitude, double longitude,
+    public Recipient(String personId, double latitude, double longitude,
                      int restrictions, int sundayHours, int mondayHours,
                      int tuesdayHours, int wednesdayHours, int thursdayHours,
                      int fridayHours, int saturdayHours) {

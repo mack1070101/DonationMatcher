@@ -44,6 +44,7 @@ public class FileController {
     public String[] readLine() throws IOException {
         String[] line;
         if(!this.skippedFirstLine){
+            this.skippedFirstLine = true;
            line = br.readLine().split(",");
            line = br.readLine().split(",");
         }else{

@@ -1,7 +1,9 @@
+import controllers.DatabaseController;
 import controllers.FileController;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -10,7 +12,7 @@ import java.util.Scanner;
  */
 public class CliMain {
 
-    public static void main(String args[]) throws IOException {
+    public static void main(String args[]) throws IOException, SQLException {
         String defaultOutputFilename = "result.csv";
         String customerCSV = new String();
         String recipientCSV = new String();
@@ -51,16 +53,31 @@ public class CliMain {
         String outputFile = scanner.nextLine();
         if (outputFile.equals("")) outputFile = defaultOutputFilename;
         */
-        customerCSV = "/home/mackenzie/workspace/copiaTest/src/main/java/Customers.csv";
+        customerCSV = "/home/mackenzie/workspace/copiaTest/src/test/java/testAssets/Customers.csv";
 
         FileController cFC = new FileController(customerCSV);
+      //FileController rFC = new FileController(recipientCSV);
+        DatabaseController dbC = new DatabaseController();
+        dbC.createPersonsTable();
+
+//        dbC.createPickupTable();
+//        dbC.createRecipientTable();
 
         while(true){
-            String line = Arrays.toString(cFC.readLine());
+            String[] line = cFC.readLine();
+            int i = 0;
+
+            for(String str : line){
+                line[i] = str.replaceAll("'", "");
+                i++;
+            }
+
             if(line == null){
                 break;
             }
-            System.out.println(line);
+            dbC.insertIntoPersonTable(Arrays.copyOfRange(line, 0, 9));
+
+
         }
 
     }

@@ -15,7 +15,7 @@ import java.util.UUID;
  */
 
 public class Pickup {
-    private UUID personId;
+    private final String personId;
     private double latitude;
     private double longitude;
     private int category;
@@ -35,7 +35,7 @@ public class Pickup {
      * @param date
      * @param timeZoneId
      */
-    public Pickup(UUID personId, double lat, double lon, int category,
+    public Pickup(String personId, double lat, double lon, int category,
                   String date, String timeZoneId){
         this.personId = personId;
         this.longitude = lat;

@@ -20,20 +20,20 @@ public class PersonTest {
 
     //Sample data for testing getters and setters
     Person goodPerson = new Person("Leeroy", "Jenkins",
-            "1234 Fake St.", "CA", "94107", "US",
+            "1234 Fake St.", "Los Angels","CA", "94107", "US",
             "leeroy@warcraft.com", "605-555-5555");
 
     @Test
     public void testCorrectPerson(){
         Person p = new Person("Leeroy", "Jenkins",
-                "1234 Fake St.", "CA", "94107", "US",
+                "1234 Fake St.", "Las Vegas","CA", "94107", "US",
                 "leeroy@warcraft.com", "605-555-5555");
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testBadPersonInputs(){
         Person p = new Person("Leeroy", " ",
-                "1234 Fake St.", "CA", "94107", "US",
+                "1234 Fake St.", "Las Vegas","CA", "94107", "US",
                 "leeroy@warcraft.com", "605-555-5555");
     }
 
