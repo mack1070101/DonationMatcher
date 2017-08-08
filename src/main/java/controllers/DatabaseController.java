@@ -19,7 +19,7 @@ public class DatabaseController {
     private String databaseName = "results.db";
     private Connection conn;
     Statement statement = null;
-
+    int foodFieldMax = 63;
     /**
      * Constructor for database controller
      */
@@ -32,7 +32,6 @@ public class DatabaseController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     /**
@@ -183,8 +182,9 @@ public class DatabaseController {
         // Build category requirement
         // Used to implement bitwise XOR in SQLITE as it lacks many nice things
         // https://stackoverflow.com/questions/16440831/bitwise-xor-in-sqlite-bitwise-not-not-working-as-i-expect
-        String restrictions = "(~(restrictions&"+ pickup.getCategory()+"))&(restrictions|"+ pickup.getCategory()+"" +
-                ") <= " +pickup.getCategory()+"";
+        String restrictions = "((((~(restrictions&"+ foodFieldMax+"))&(restrictions|"+ foodFieldMax+"" +
+                ")) & "+pickup.getCategory()+") != 0)";
+
 
         //Build distance requirement
         GeoController geoController = new GeoController();
@@ -199,9 +199,6 @@ public class DatabaseController {
                         restrictions + " AND " +
                         distance + " " +
                 "ORDER BY restrictions DESC;" ;
-
-
-//        System.out.println(query);
 
         return statement.executeQuery(query);
     }
