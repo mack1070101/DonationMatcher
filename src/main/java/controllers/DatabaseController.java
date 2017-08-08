@@ -135,6 +135,10 @@ public class DatabaseController {
      * It builds a query string to execute as a ResultSet so that
      * the database can be queried line by line in your main function to reduce
      * memory overhead in the event of a large database
+     *
+     *
+     * NOTE: Distance query is done as a simple bounding box. An Rtree would be implemented
+     * in the future to support rapid geographic queries
      * @param pickup
      * @return result set to iterate on in main
      * @throws SQLException
@@ -172,12 +176,14 @@ public class DatabaseController {
             throw new IllegalArgumentException();
         }
 
-        // Build category
+        // Build category requirement
+        // Used to implement bitwise XOR in SQLITE as it lacks many nice things
+        // https://stackoverflow.com/questions/16440831/bitwise-xor-in-sqlite-bitwise-not-not-working-as-i-expect
         String restrictions = "(~(restrictions&"+ pickup.getCategory()+"))&(restrictions|"+ pickup.getCategory()+"" +
                 ") <= " +pickup.getCategory()+"";
 
-
-
+        //Build distance requirement
+        String distance = "(latitude >= minLat) AND (latitude <= minLat)";
 
         //Build query
         String query = "SELECT * FROM RECIPIENT " +
@@ -185,7 +191,6 @@ public class DatabaseController {
                         restrictions + " " +
                 "ORDER BY restrictions DESC;" ;
 
-        System.out.println(query);
 
         return statement.executeQuery(query);
     }
