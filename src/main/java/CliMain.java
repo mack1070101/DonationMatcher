@@ -14,7 +14,7 @@ public class CliMain {
         System.out.println(" |       |     | |_____]   |   |_____|         |    |______ |______    |   ");
         System.out.println(" |_____  |_____| |       __|__ |     |         |    |______ ______|    |   ");
 
-        System.out.println("\n A programming challenge by Mackenzie Bligh");
+        System.out.println("\nA programming challenge by Mackenzie Bligh");
         System.out.println("See https://github.com/mack1070101/copiaTest/wiki for docs and details");
 
         Scanner scanner = new Scanner(System.in);

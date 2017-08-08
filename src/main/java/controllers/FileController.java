@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 
 /**
  * Created by mackenzie on 07/08/17.
+ *
+ * Handles file operations, opening, reading and validation
  */
 public class FileController {
 
@@ -17,6 +19,9 @@ public class FileController {
     private static final String CSV_PATTERN =
            "([^\\s]+(\\.(?i)(csv))$)";
 
+    /**
+     * For performing matching and operations on files
+     */
     public FileController(){
         pattern = Pattern.compile(CSV_PATTERN);
     }
@@ -28,7 +33,6 @@ public class FileController {
         } else if (new File(filename).exists()){
             return true;
         } else{
-            System.out.print(new File(filename).exists());
             return false;
         }
 
