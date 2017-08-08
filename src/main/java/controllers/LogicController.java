@@ -17,6 +17,7 @@ import java.util.HashMap;
  *
  * Handles the logic of querying and selecting the appropriate matches
  * @TODO change from keying on PERSONID to a UUID?
+ * @TODO in the future, track amounts of food to factor that in on matching
  */
 public class LogicController {
     private DatabaseController dbc;

@@ -10,6 +10,9 @@ import java.util.TimeZone;
  *
  * A controller for handling all interaction with the database
  * used to store and query for information.
+ *
+ *
+ * @TODO in the future, track amounts of food to factor that in on matching
  */
 public class DatabaseController {
     private String databaseName = "results.db";
@@ -169,10 +172,20 @@ public class DatabaseController {
             throw new IllegalArgumentException();
         }
 
+        // Build category
+        String restrictions = "(~(restrictions&"+ pickup.getCategory()+"))&(restrictions|"+ pickup.getCategory()+"" +
+                ") <= " +pickup.getCategory()+"";
+
+
+
+
         //Build query
         String query = "SELECT * FROM RECIPIENT " +
-                "WHERE "+ dateLine + " " +
+                "WHERE "+ dateLine + " AND " +
+                        restrictions + " " +
                 "ORDER BY restrictions DESC;" ;
+
+        System.out.println(query);
 
         return statement.executeQuery(query);
     }
