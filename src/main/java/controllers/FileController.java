@@ -29,6 +29,11 @@ public class FileController {
         pattern = Pattern.compile(CSV_PATTERN);
     }
 
+    /**
+     * File controller to handle IO on a given file
+     * @param name
+     * @throws FileNotFoundException
+     */
     public FileController(String name) throws FileNotFoundException {
         pattern = Pattern.compile(CSV_PATTERN);
         matcher = pattern.matcher(name);
@@ -41,6 +46,12 @@ public class FileController {
 
     }
 
+    /**
+     * Reads a line from the inputted CSV, while skipping the templating in the
+     * first line
+     * @return An array of strings containing the contents of one line in the file
+     * @throws IOException
+     */
     public String[] readLine() throws IOException {
         String[] line;
         if(!this.skippedFirstLine){
@@ -53,15 +64,23 @@ public class FileController {
         return line;
     }
 
+    /**
+     * Close out the file reader
+     * @throws IOException
+     */
     public void closeReader() throws IOException {
         br.close();
     }
 
+    /**
+     * Uses regex to check that a filename is valid and that it exists
+     * @param filename
+     * @return
+     */
     public boolean isValid(final String filename){
         matcher = pattern.matcher(filename);
         if(!matcher.matches()){
             return false;
         } else return new File(filename).exists();
-
     }
 }

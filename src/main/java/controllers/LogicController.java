@@ -14,23 +14,36 @@ import java.util.HashMap;
  * http://janmatuschek.de/LatitudeLongitudeBoundingCoordinates#Latitude
  * used for a semi crude implementation of geographic distance
  * Would use sqlite and Rtrees if time allowed
+ *
+ * Handles the logic of querying and selecting the appropriate matches
+ * @TODO change from keying on PERSONID to a UUID?
  */
 public class LogicController {
     private DatabaseController dbc;
     private int earthRadius = 3959; //miles
     private double angluarRadius = 10 / earthRadius;
 
+    /**
+     * Constructor for a logic controller
+     * @param dbc
+     */
     public LogicController(DatabaseController dbc) {
         this.dbc = dbc;
     }
 
+    /**
+     * Creates a hashmap contianing the ID of a pickup and their matching recipients
+     *
+     * @return a hashmap that has a key of a pickup and an arraylist of recipients
+     * @throws SQLException
+     */
     public HashMap<String, ArrayList<Recipient>> findMatches() throws SQLException {
-        ResultSet rs = dbc.statement.executeQuery("SELECT * from pickup;");
-        ArrayList<Pickup> pickups = new ArrayList<Pickup>();
         HashMap<String, ArrayList<Recipient>> map = new HashMap<String, ArrayList<Recipient>>();
 
+        // Make array of pickups
+        ResultSet rs = dbc.statement.executeQuery("SELECT * from pickup;");
+        ArrayList<Pickup> pickups = new ArrayList<Pickup>();
         while (rs.next()) {
-            // Make array of pickups
             String personId = rs.getString("personId");
             double latitude = rs.getDouble("latitude");
             double longitude = rs.getDouble("longitude");
@@ -41,12 +54,13 @@ public class LogicController {
                     pickupAt, timeZoneId);
             pickups.add(p);
         }
-        // Search array of pickups for suitable recipients and return them
 
+        // Search array of pickups for suitable recipients and return them
         for(Pickup p : pickups){
             rs = dbc.fetchSuitableRecipients(p);
             ArrayList<Recipient> recipients = new ArrayList<Recipient>();
 
+            // Query for matching recipients
             while (rs.next()){
                  String personId = rs.getString("personId");
                  double latitude = rs.getDouble("latitude");
@@ -67,6 +81,7 @@ public class LogicController {
 
                  recipients.add(r);
             }
+            // Insert into map the ID and recipients
             map.put(p.getPersonId(), recipients);
         }
         return map;
