@@ -96,7 +96,7 @@ public class CliMain {
         }
 
         LogicController lc = new LogicController(dbC);
-        HashMap<Pickup, ArrayList<Recipient>> map = lc.findMatches();
+        HashMap<String, ArrayList<Recipient>> map = lc.findMatches();
 
         Iterator it = map.entrySet().iterator();
 

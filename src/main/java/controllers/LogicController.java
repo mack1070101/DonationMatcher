@@ -24,10 +24,10 @@ public class LogicController {
         this.dbc = dbc;
     }
 
-    public HashMap<Pickup, ArrayList<Recipient>> findMatches() throws SQLException {
+    public HashMap<String, ArrayList<Recipient>> findMatches() throws SQLException {
         ResultSet rs = dbc.statement.executeQuery("SELECT * from pickup;");
         ArrayList<Pickup> pickups = new ArrayList<Pickup>();
-        HashMap<Pickup, ArrayList<Recipient>> map = new HashMap<Pickup, ArrayList<Recipient>>();
+        HashMap<String, ArrayList<Recipient>> map = new HashMap<String, ArrayList<Recipient>>();
 
         while (rs.next()) {
             // Make array of pickups
@@ -67,7 +67,7 @@ public class LogicController {
 
                  recipients.add(r);
             }
-            map.put(p, recipients);
+            map.put(p.getPersonId(), recipients);
         }
         return map;
     }
