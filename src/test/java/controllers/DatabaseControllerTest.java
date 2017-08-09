@@ -9,7 +9,6 @@ import org.junit.Test;
 import java.io.File;
 import java.sql.SQLException;
 
-import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -19,7 +18,7 @@ import static org.junit.Assert.assertNotEquals;
  *
  * Presently the input validation tests are failing so that the can be addressed when more is known
  */
-public class DatabaseControllerTest {
+public class DatabaseControllerTest extends LogicControllerTest {
 
     private DatabaseController dbc = new DatabaseController("test.db");
     private String[] goodPerson = ("Brett,Sullivan,2784 Ella Street,San Francisco,CA,94107,US,BrettJSullivan@teleworm.us," +
@@ -102,12 +101,9 @@ public class DatabaseControllerTest {
         //Test has been mocked to ensure future development addresses this
     }
 
-    //TODO address this case
     @Test
     public void fetchSuitableRecipients() throws Exception {
-        dbc.createRecipientTable();
-
-        fail("MUST BE ADDRESSED");
+        //Covered by findMatches test in LogicControllerTest
     }
 
     @Test
