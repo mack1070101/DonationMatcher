@@ -40,16 +40,22 @@ public class LogicController {
         HashMap<String, ArrayList<Recipient>> map = new HashMap<String, ArrayList<Recipient>>();
 
         // Make array of pickups  @TODO refactor to just pull ID
-        ResultSet rs = dbc.statement.executeQuery("SELECT personId from pickup;");
-        ArrayList<String> pickupStrings = new ArrayList<String>();
+        ResultSet rs = dbc.statement.executeQuery("SELECT * from pickup;");
+        ArrayList<Pickup> pickups = new ArrayList<Pickup>();
         while (rs.next()) {
             String personId = rs.getString("personId");
+            double latitude = rs.getDouble("latitude");
+            double longitude = rs.getDouble("longitude");
+            int category = rs.getInt("categories");
+            String pickupAt = rs.getString("pickupAt");
+            String timeZoneId = rs.getString("timeZoneId");
+            Pickup p = new Pickup(personId, latitude, longitude, category,
+                    pickupAt, timeZoneId);
 
-            pickupStrings.add(p);
+            pickups.add(p);
         }
 
         // Search array of pickups for suitable recipients and return them
-        // maybe this should be moved into database controller @TODO
         for(Pickup p : pickups){
             rs = dbc.fetchSuitableRecipients(p);
             ArrayList<Recipient> recipients = new ArrayList<Recipient>();

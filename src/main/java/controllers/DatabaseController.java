@@ -180,7 +180,7 @@ public class DatabaseController {
         int binaryRepTime = 1 << timeAsInt - 8;
 
         //Sidelength requirement
-        double side = 10 * 1.609344; // Sidelength of 10 miles converted to KM
+        double side = 10; // 10 miles
 
         //String that will be used to build time requirement for query
         String dateLine;
@@ -212,6 +212,7 @@ public class DatabaseController {
 
         //Build distance requirement
         GeoController geoController = new GeoController();
+
         double boundingBox[] = geoController.boundingBox(pickup.getLatitude(), pickup.getLongitude(), side);
 
         String distance = "((latitude >= " + boundingBox[0] + ") AND (latitude <= " + boundingBox[1] + "))";
@@ -222,7 +223,7 @@ public class DatabaseController {
                 "WHERE " + dateLine + " AND " +
                 restrictions + " AND " +
                 distance + " " +
-                "ORDER BY restrictions DESC;";
+                "ORDER BY restrictions ASC;";
 
         return statement.executeQuery(query);
     }

@@ -27,7 +27,7 @@ public class FileController {
     private Matcher matcher;
 
     private static final String CSV_PATTERN =
-           "([^\\s]+(\\.(?i)(csv))$)";
+            "([^\\s]+(\\.(?i)(csv))$)";
 
     /**
      * For performing matching and operations on files
@@ -67,8 +67,8 @@ public class FileController {
         String[] line;
         if(!this.skippedFirstLine){
             this.skippedFirstLine = true;
-           line = br.readLine().split(",");
-           line = br.readLine().split(",");
+            line = br.readLine().split(",");
+            line = br.readLine().split(",");
         }else{
             line = br.readLine().split(",");
         }
@@ -104,6 +104,11 @@ public class FileController {
         Person pickupOwner = dbc.getPerson(pickup.getPersonId());
         Person recipientOwner = dbc.getPerson(recipient.getPersonId());
         String writeString =pickupOwner.toCsv() +"," +pickup.toCsv() +","+ recipientOwner.toCsv()+"," + recipient.toCsv() +"\n";
+        pw.write(writeString);
+    }
+    public void writeLine(Pickup pickup, DatabaseController dbc) throws SQLException {
+        Person pickupOwner = dbc.getPerson(pickup.getPersonId());
+        String writeString =pickupOwner.toCsv() +"," +pickup.toCsv() +",,,,,,,,,,,,,,,,,,,,\n";
         pw.write(writeString);
     }
 }

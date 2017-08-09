@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import java.io.File;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
@@ -66,7 +65,6 @@ public class DatabaseControllerTest {
     public void testInsertIntoPersonTable_BadInput() throws Exception {
         String[] badPerson = goodPerson;
         badPerson[8] = "   ";
-        System.out.println(Arrays.toString(badPerson));
         dbc.createPersonsTable();
         dbc.insertIntoPersonTable(badPerson);
     }

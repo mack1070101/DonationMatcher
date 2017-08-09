@@ -110,14 +110,13 @@ public class CliMain {
         FileController outputFileController = new FileController(outputFile);
         while(it.hasNext()){
             Map.Entry pair = (Map.Entry)it.next();
+            Pickup pickup = dbC.getPickup((String) pair.getKey());
             try{
                 for(Recipient recipient: map.get(pair.getKey())){
-                    Pickup pickup = dbC.getPickup((String) pair.getKey());
                     outputFileController.writeLine(pickup,recipient, dbC);
                 }
             }catch (Exception e){
-                System.out.println("\n");
-
+                outputFileController.writeLine(pickup, dbC);
             }
         }
 
