@@ -45,7 +45,7 @@ public class RecipientTest {
     @Test(expected = IllegalArgumentException.class)
     public void testRecipientWithBadAvailibility(){
                 Recipient r = new Recipient(goodPerson.getPhone(), 37.809052, -122.483365,
-                7, 44536, 44382, 19514, 12035,
+                7, 4453096, 44382, 19514, 12035,
                 18094, 41561, 131072);
     }
 

@@ -26,6 +26,19 @@ public class Recipient {
                      int tuesdayHours, int wednesdayHours, int thursdayHours,
                      int fridayHours, int saturdayHours) {
 
+        if(latitude < -90 || latitude > 90) throw new IllegalArgumentException();
+        if(longitude < -180 || longitude> 180) throw new IllegalArgumentException();
+        if(restrictions > 63 || restrictions < 0) throw new IllegalArgumentException();
+        if(personId.matches(".*\\w.*") == false) throw new IllegalArgumentException();
+        if(sundayHours > 65535 || sundayHours< 0) throw new IllegalArgumentException();
+        if(mondayHours > 65535 || mondayHours < 0) throw new IllegalArgumentException();
+        if(tuesdayHours > 65535 || tuesdayHours < 0) throw new IllegalArgumentException();
+        if(wednesdayHours > 65535 || wednesdayHours < 0) throw new IllegalArgumentException();
+        if(thursdayHours > 65535 || thursdayHours < 0) throw new IllegalArgumentException();
+        if(fridayHours > 65535 || fridayHours < 0) throw new IllegalArgumentException();
+        if(saturdayHours > 65535 || saturdayHours < 0) throw new IllegalArgumentException();
+
+
         this.personId = personId;
         this.latitude = latitude;
         this.longitude = longitude;

@@ -60,6 +60,11 @@ public class Pickup {
      */
     public Pickup(String personId, double lat, double lon, int category,
                   String date, String timeZoneId) {
+
+        if(lat < -90 || lat > 90) throw new IllegalArgumentException();
+        if(lon < -180 || lon > 180) throw new IllegalArgumentException();
+        if(category > 63) throw new IllegalArgumentException();
+        if(personId.matches(".*\\w.*") == false) throw new IllegalArgumentException();
         this.personId = personId;
         this.latitude = lat;
         this.longitude = lon;

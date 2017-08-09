@@ -18,7 +18,7 @@ import static org.junit.Assert.assertNotEquals;
  *
  * Presently the input validation tests are failing so that the can be addressed when more is known
  */
-public class DatabaseControllerTest extends LogicControllerTest {
+public class DatabaseControllerTest {
 
     private DatabaseController dbc = new DatabaseController("test.db");
     private final String[] goodPerson = ("Brett,Sullivan,2784 Ella Street,San Francisco,CA,94107,US,BrettJSullivan@teleworm.us," +
@@ -114,7 +114,7 @@ public class DatabaseControllerTest extends LogicControllerTest {
         Pickup pickup = dbc.getPickup(goodPickup[0]);
         assertNotEquals(null, pickup);
     }
-    @Test
+    @Test(expected = SQLException.class)
     public void getPickup_PickupDNE() throws Exception{
         dbc.createPickupTable();
         dbc.insertIntoPickupTable(goodPickup);
@@ -131,7 +131,7 @@ public class DatabaseControllerTest extends LogicControllerTest {
         assertNotEquals(null, person);
     }
 
-    @Test
+    @Test(expected = SQLException.class)
     public void getPerson_PersonDNE() throws Exception {
         dbc.createPersonsTable();
         dbc.insertIntoPersonTable(goodPerson);

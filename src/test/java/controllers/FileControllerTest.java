@@ -11,7 +11,6 @@ import static org.junit.Assert.*;
 /**
  * Created by mackenzie on 07/08/17.
  */
-@SuppressWarnings("unused")
 public class FileControllerTest {
     private final File resources = new File("src/test/java/testAssets");
     private final String absFilePath = resources.getAbsolutePath();

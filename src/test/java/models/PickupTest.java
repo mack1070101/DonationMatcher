@@ -25,7 +25,6 @@ public class PickupTest {
     public void testPickWithoutPerson(){
         Pickup p = new Pickup(" ", 37.728921, -122.324225, 45,
                 "2016-11-29T16:00:00-08:00", "America/Los_Angeles");
-
     }
 
     @Test(expected = IllegalArgumentException.class)

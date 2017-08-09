@@ -33,9 +33,9 @@ public class PersonTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testBadPersonInputs(){
-        Person p = new Person("Leeroy", " ",
+        Person p = new Person("Leeroy", "Jenkins",
                 "1234 Fake St.", "Las Vegas","CA", "94107", "US",
-                "leeroy@warcraft.com", "605-555-5555");
+                "leeroywarcraft.com", "605-555-5555 ");
     }
 
     @Test
