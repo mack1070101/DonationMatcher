@@ -15,6 +15,7 @@ import java.util.*;
  * Handles the very limited CLI interface, as well as most app functionality
  */
 
+@SuppressWarnings("WeakerAccess")
 public class CliMain {
 
     public static void main(String args[]) throws IOException, SQLException {
@@ -56,9 +57,9 @@ public class CliMain {
         System.out.print("Enter desired filename of output or leave blank for" + defaultOutputFilename + ": ");
 
         String outputFile = scanner.nextLine();
-        if (outputFile.equals("")) outputFile = defaultOutputFilename;
-
-        outputFile = "result.csv";
+        if (outputFile.equals("")){
+            outputFile = defaultOutputFilename;
+        }
 
         FileController cFC = new FileController(customerCSV);
         FileController rFC = new FileController(recipientCSV);

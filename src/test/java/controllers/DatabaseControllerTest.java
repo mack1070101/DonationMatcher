@@ -21,17 +21,18 @@ import static org.junit.Assert.assertNotEquals;
 public class DatabaseControllerTest extends LogicControllerTest {
 
     private DatabaseController dbc = new DatabaseController("test.db");
-    private String[] goodPerson = ("Brett,Sullivan,2784 Ella Street,San Francisco,CA,94107,US,BrettJSullivan@teleworm.us," +
+    private final String[] goodPerson = ("Brett,Sullivan,2784 Ella Street,San Francisco,CA,94107,US,BrettJSullivan@teleworm.us," +
             "650-262-4366").split(",");
-    private String[] goodPickup = ("650-262-4366,37.728912,-122.324225,45,2016-11-29T16:00:00-08:00,America/Los_Angeles" +
+    private final String[] goodPickup = ("650-262-4366,37.728912,-122.324225,45,2016-11-29T16:00:00-08:00,America/Los_Angeles" +
             "").split(",");
-    private String[] goodRecipient = ("408-702-0996,37.809052,-122.483365,7,44536,44382,19514,12035,18094,41561,55924" +
+    private final String[] goodRecipient = ("408-702-0996,37.809052,-122.483365,7,44536,44382,19514,12035,18094,41561,55924" +
             "").split(",");
     @Before
     public void setUp() throws Exception {
        dbc = new DatabaseController("test.db");
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     @After
     public void tearDown() throws Exception{
         dbc.close();

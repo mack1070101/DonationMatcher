@@ -18,10 +18,9 @@ import java.util.TimeZone;
  * TODO convert to singleton pattern
  */
 public class DatabaseController {
-    private String databaseName = "results.db";
     private Connection conn;
     Statement statement = null;
-    int foodFieldMax = 63;
+    final int foodFieldMax = 63;
 
     /**
      * Constructor for database controller
@@ -29,7 +28,8 @@ public class DatabaseController {
     public DatabaseController() {
         try {
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:" +databaseName);
+            String databaseName = "results.db";
+            conn = DriverManager.getConnection("jdbc:sqlite:" + databaseName);
 
             statement = conn.createStatement();
         } catch (Exception e) {
@@ -145,7 +145,7 @@ public class DatabaseController {
      * from where it is called in CLI main. It is currently taking
      * a string for expediency
      *
-     * @param string
+     * @param string array of strings that represents a person data
      * @throws SQLException
      * TODO make it take recipient object.
      */
@@ -234,52 +234,50 @@ public class DatabaseController {
 
         ResultSet resultSet = statement.executeQuery(query);
 
-        Pickup pickup = null;
-        while(resultSet.next()){
-            String person = resultSet.getString("personId");
-            double latitude = resultSet.getDouble("latitude");
-            double longitude = resultSet.getDouble("latitude");
-            int categories = resultSet.getInt("categories");
-            String pickupAt = resultSet.getString("pickupAt");
-            String timeZoneId = resultSet.getString("timeZoneId");
+        Pickup pickup;
+        resultSet.next();
+        String person = resultSet.getString("personId");
+        double latitude = resultSet.getDouble("latitude");
+        double longitude = resultSet.getDouble("latitude");
+        int categories = resultSet.getInt("categories");
+        String pickupAt = resultSet.getString("pickupAt");
+        String timeZoneId = resultSet.getString("timeZoneId");
 
-            pickup = new Pickup(person, latitude, longitude, categories,pickupAt, timeZoneId);
-            return pickup;
-        }
+        pickup = new Pickup(person, latitude, longitude, categories,pickupAt, timeZoneId);
         return pickup;
     }
 
 
     /**
      * TODO future improvement: cache the Person
-     * @param personId
+     * Fetches from the database and returns a Person object
+     *
+     * @param personId identifier of the person
      * @return a Person object
      * @throws SQLException
      */
     public Person getPerson(String personId) throws SQLException {
         String query = "SELECT * FROM person " +
                 "WHERE phone = " + "'" + personId + "'" + ";";
-        Person person = null;
+        Person person;
 
         ResultSet resultSet = statement.executeQuery(query);
 
-        while (resultSet.next()) {
-            String firstName = resultSet.getString("firstName");
-            String lastName = resultSet.getString("lastName");
-            String street = resultSet.getString("street");
-            String city = resultSet.getString("city");
-            String state = resultSet.getString("state");
-            String postal = resultSet.getString("postal");
-            String country = resultSet.getString("country");
-            String email = resultSet.getString("email");
-            String phone = resultSet.getString("phone");
-            person = new Person(firstName, lastName, street,
-                  city, state, postal, country, email,
-                  phone);
-            return person;
-        }
-
+        resultSet.next();
+        String firstName = resultSet.getString("firstName");
+        String lastName = resultSet.getString("lastName");
+        String street = resultSet.getString("street");
+        String city = resultSet.getString("city");
+        String state = resultSet.getString("state");
+        String postal = resultSet.getString("postal");
+        String country = resultSet.getString("country");
+        String email = resultSet.getString("email");
+        String phone = resultSet.getString("phone");
+        person = new Person(firstName, lastName, street,
+                city, state, postal, country, email,
+                phone);
         return person;
+
     }
     public void close() throws SQLException {
         statement.close();

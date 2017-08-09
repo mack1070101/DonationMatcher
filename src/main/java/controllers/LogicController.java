@@ -20,7 +20,7 @@ import java.util.HashMap;
  * TODO in the future, track amounts of food to factor that in on matching
  */
 public class LogicController {
-    private DatabaseController dbc;
+    private final DatabaseController dbc;
 
     /**
      * Constructor for a logic controller

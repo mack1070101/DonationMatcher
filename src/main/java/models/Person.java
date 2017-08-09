@@ -82,7 +82,8 @@ public class Person {
     }
 
     public String toCsv(){
-        String sb = firstName +
+
+        return firstName +
                 "," +
                 lastName +
                 "," +
@@ -99,8 +100,6 @@ public class Person {
                 email +
                 "," +
                 phone;
-
-        return sb;
     }
 }
 

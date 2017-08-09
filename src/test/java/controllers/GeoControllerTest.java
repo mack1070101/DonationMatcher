@@ -5,10 +5,11 @@ import org.junit.Test;
 /**
  * Created by mackenzie on 08/08/17.
  */
+@SuppressWarnings("unused")
 public class GeoControllerTest {
-    private double validLat = 37.809052;
-    private double validLon = -122.483365;
-    private double distance = 10.0; //miles as per requirement
+    private final double validLat = 37.809052;
+    private final double validLon = -122.483365;
+    private final double distance = 10.0; //miles as per requirement
 
     @Test
     public void boundingBox() throws Exception {

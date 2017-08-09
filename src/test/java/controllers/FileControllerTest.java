@@ -11,10 +11,11 @@ import static org.junit.Assert.*;
 /**
  * Created by mackenzie on 07/08/17.
  */
+@SuppressWarnings("unused")
 public class FileControllerTest {
-    private File resources = new File("src/test/java/testAssets");
-    private String absFilePath = resources.getAbsolutePath();
-    private FileController fileController = new FileController();
+    private final File resources = new File("src/test/java/testAssets");
+    private final String absFilePath = resources.getAbsolutePath();
+    private final FileController fileController = new FileController();
 
 
     @Test

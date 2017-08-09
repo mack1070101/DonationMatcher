@@ -8,8 +8,9 @@ import org.junit.Test;
  *
  * ODO add database hook in for person
  */
+@SuppressWarnings("unused")
 public class PickupTest {
-    Person goodPerson = new Person("Leeroy", "Jenkins",
+    private final Person goodPerson = new Person("Leeroy", "Jenkins",
             "1234 Fake St.", "las Vegas", "CA", "94107", "US",
             "leeroy@warcraft.com", "605-555-5555");
 

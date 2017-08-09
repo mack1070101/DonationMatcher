@@ -16,10 +16,11 @@ import static org.junit.Assert.*;
  * format, country codes conform to some specification, postal codes conform
  * to some specification, ect.
  */
+@SuppressWarnings("unused")
 public class PersonTest {
 
     //Sample data for testing getters and setters
-    Person goodPerson = new Person("Leeroy", "Jenkins",
+    private final Person goodPerson = new Person("Leeroy", "Jenkins",
             "1234 Fake St.", "Los Angels","CA", "94107", "US",
             "leeroy@warcraft.com", "605-555-5555");
 

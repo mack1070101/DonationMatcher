@@ -20,10 +20,9 @@ public class FileController {
 
     private boolean skippedFirstLine = false;
     private boolean writtenFirstLine = false;
-    private String filename;
     private BufferedReader br;
     private PrintWriter pw;
-    private Pattern pattern;
+    private final Pattern pattern;
     private Matcher matcher;
 
     private static final String CSV_PATTERN =
@@ -46,13 +45,10 @@ public class FileController {
         matcher = pattern.matcher(name);
         if (!matcher.matches()) {
             throw new IllegalArgumentException();
-        } else{
-            this.filename = name;
-            try{
-                this.br = new BufferedReader(new FileReader(this.filename));
-            }catch(FileNotFoundException e){
-                this.pw = new PrintWriter(new File(this.filename));
-            }
+        } else try {
+            this.br = new BufferedReader(new FileReader(name));
+        } catch (FileNotFoundException e) {
+            this.pw = new PrintWriter(new File(name));
         }
 
     }
@@ -67,6 +63,7 @@ public class FileController {
         String[] line;
         if(!this.skippedFirstLine){
             this.skippedFirstLine = true;
+            //noinspection UnusedAssignment
             line = br.readLine().split(",");
             line = br.readLine().split(",");
         }else{
@@ -77,9 +74,8 @@ public class FileController {
 
     /**
      * Close out the file reader
-     * @throws IOException
      */
-    public void close() throws IOException {
+    public void close() {
         try{
             br.close();
         } catch (Exception e){
@@ -99,12 +95,30 @@ public class FileController {
     }
 
     public void writeLine(Pickup pickup, Recipient recipient, DatabaseController dbc) throws SQLException {
+        if(!writtenFirstLine){
+            pw.write("pickupOwnerFirstName,pickupOwnerLastName,pickupOwnerStreet,pickupOwnerPostal," +
+                    "pickupOwnerState,pickupOwnerEmail,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
+                    "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName,recipientOwnerStreet,recipientOwnerPostal," +
+                    "recipientOwnerState,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
+                    "recipientRestrictions,recipientSunday,recipientMonday,recipientTuesday,recipientWednesday,recipientThursday" +
+                    "recipientFriday,RecipientSaturday");
+            writtenFirstLine = true;
+        }
         Person pickupOwner = dbc.getPerson(pickup.getPersonId());
         Person recipientOwner = dbc.getPerson(recipient.getPersonId());
         String writeString =pickupOwner.toCsv() +"," +pickup.toCsv() +","+ recipientOwner.toCsv()+"," + recipient.toCsv() +"\n";
         pw.write(writeString);
     }
     public void writeLine(Pickup pickup, DatabaseController dbc) throws SQLException {
+        if(!writtenFirstLine){
+            pw.write("pickupOwnerFirstName,pickupOwnerLastName,pickupOwnerStreet,pickupOwnerPostal," +
+                    "pickupOwnerState,pickupOwnerEmail,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
+                    "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName,recipientOwnerStreet,recipientOwnerPostal," +
+                    "recipientOwnerState,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
+                    "recipientRestrictions,recipientSunday,recipientMonday,recipientTuesday,recipientWednesday,recipientThursday" +
+                    "recipientFriday,RecipientSaturday");
+            writtenFirstLine = true;
+        }
         Person pickupOwner = dbc.getPerson(pickup.getPersonId());
         String writeString =pickupOwner.toCsv() +"," +pickup.toCsv() +",,,,,,,,,,,,,,,,,,,,\n";
         pw.write(writeString);

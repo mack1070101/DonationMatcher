@@ -39,13 +39,11 @@ public class Pickup {
     }
 
     private final String personId;
-    private double latitude;
-    private double longitude;
-    private int category;
-    private Date pickupAt;
-    private String timeZoneId;
-    private int day;
-    private String time;
+    private final double latitude;
+    private final double longitude;
+    private final int category;
+    private final Date pickupAt;
+    private final String timeZoneId;
 
     /**
      * Constructor for the pickup class
@@ -72,7 +70,8 @@ public class Pickup {
     }
 
     public String toCsv() {
-        String sb = String.valueOf(latitude) +
+
+        return String.valueOf(latitude) +
                 "," +
                 longitude +
                 "," +
@@ -81,7 +80,5 @@ public class Pickup {
                 pickupAt +
                 "," +
                 timeZoneId;
-
-        return sb;
     }
 }

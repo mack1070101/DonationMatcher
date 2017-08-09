@@ -9,17 +9,17 @@ package models;
  * The recipient class represents an event where food must be recieved
  */
 public class Recipient {
-    private String personId;
-    private double latitude;
-    private double longitude;
-    private int restrictions;
-    private int sundayHours;
-    private int mondayHours;
-    private int tuesdayHours;
-    private int wednesdayHours;
-    private int thursdayHours;
-    private int fridayHours;
-    private int saturdayHours;
+    private final String personId;
+    private final double latitude;
+    private final double longitude;
+    private final int restrictions;
+    private final int sundayHours;
+    private final int mondayHours;
+    private final int tuesdayHours;
+    private final int wednesdayHours;
+    private final int thursdayHours;
+    private final int fridayHours;
+    private final int saturdayHours;
 
     public Recipient(String personId, double latitude, double longitude,
                      int restrictions, int sundayHours, int mondayHours,
@@ -43,7 +43,8 @@ public class Recipient {
         return personId;
     }
     public String toCsv(){
-        String sb = String.valueOf(latitude) +
+
+        return String.valueOf(latitude) +
                 "," +
                 longitude +
                 "," +
@@ -62,8 +63,6 @@ public class Recipient {
                 fridayHours +
                 "," +
                 saturdayHours;
-
-        return sb;
     }
 }
 

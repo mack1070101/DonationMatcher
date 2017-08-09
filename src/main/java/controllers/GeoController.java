@@ -11,7 +11,7 @@ package controllers;
  * this class will become largely irrelevant as your bounding box can be calculated directly
  * in the query.
  */
-public class GeoController {
+class GeoController {
     /**
      * Constructor for GeoController
      */
