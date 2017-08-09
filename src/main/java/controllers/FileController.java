@@ -1,9 +1,11 @@
 package controllers;
 
+import models.Person;
 import models.Pickup;
 import models.Recipient;
 
 import java.io.*;
+import java.sql.SQLException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,6 +19,7 @@ import java.util.regex.Pattern;
 public class FileController {
 
     private boolean skippedFirstLine = false;
+    private boolean writtenFirstLine = false;
     private String filename;
     private BufferedReader br;
     private PrintWriter pw;
@@ -76,8 +79,13 @@ public class FileController {
      * Close out the file reader
      * @throws IOException
      */
-    public void closeReader() throws IOException {
-        br.close();
+    public void close() throws IOException {
+        try{
+            br.close();
+        } catch (Exception e){
+            pw.close();
+        }
+
     }
 
     /**
@@ -92,8 +100,10 @@ public class FileController {
         } else return new File(filename).exists();
     }
 
-    public void fileWriter(Pickup pickup, Recipient recipient){
-        System.out.println(pickup.toCsv());
-        System.out.println(recipient.toCsv());
+    public void writeLine(Pickup pickup, Recipient recipient, DatabaseController dbc) throws SQLException {
+        Person pickupOwner = dbc.getPerson(pickup.getPersonId());
+        Person recipientOwner = dbc.getPerson(recipient.getPersonId());
+        String writeString =pickupOwner.toCsv() +"," +pickup.toCsv() +","+ recipientOwner.toCsv()+"," + recipient.toCsv() +"\n";
+        pw.write(writeString);
     }
 }

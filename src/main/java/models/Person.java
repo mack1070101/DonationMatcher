@@ -2,7 +2,6 @@ package models;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
-import java.util.UUID;
 
 /**
  * Created by mackenzie on 07/08/17.
@@ -113,4 +112,29 @@ public class Person {
     public String getPhone() {
         return phone;
     }
+
+    public String toCsv(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(firstName);
+        sb.append(",");
+        sb.append(lastName);
+        sb.append(",");
+        sb.append(street);
+        sb.append(",");
+        sb.append(city);
+        sb.append(",");
+        sb.append(state);
+        sb.append(",");
+        sb.append(postal);
+        sb.append(",");
+        sb.append(country);
+        sb.append(",");
+        sb.append(email);
+        sb.append(",");
+        sb.append(phone);
+
+        return sb.toString();
+    }
 }
+
+

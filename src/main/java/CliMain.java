@@ -111,12 +111,19 @@ public class CliMain {
             try{
                 for(Recipient recipient: map.get(pair.getKey())){
                     Pickup pickup = dbC.getPickup((String) pair.getKey());
-                    outputFileController.fileWriter(pickup,recipient);
+                    outputFileController.writeLine(pickup,recipient, dbC);
                 }
             }catch (Exception e){
                 System.out.println("\n");
 
             }
         }
+
+        outputFileController.close();
+        cFC.close();
+        rFC.close();
+        dbC.close();
+
+        System.out.println("Program Complete");
     }
 }

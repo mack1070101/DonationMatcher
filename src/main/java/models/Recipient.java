@@ -1,7 +1,5 @@
 package models;
 
-import java.util.UUID;
-
 /**
  * Created by mackenzie on 07/08/17.
  *
@@ -44,4 +42,30 @@ public class Recipient {
     public String getPersonId() {
         return personId;
     }
+    public String toCsv(){
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(latitude);
+        sb.append(",");
+        sb.append(longitude);
+        sb.append(",");
+        sb.append(restrictions);
+        sb.append(",");
+        sb.append(sundayHours);
+        sb.append(",");
+        sb.append(mondayHours);
+        sb.append(",");
+        sb.append(tuesdayHours);
+        sb.append(",");
+        sb.append(wednesdayHours);
+        sb.append(",");
+        sb.append(thursdayHours);
+        sb.append(",");
+        sb.append(fridayHours);
+        sb.append(",");
+        sb.append(saturdayHours);
+
+        return sb.toString();
+    }
 }
+

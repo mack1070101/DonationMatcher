@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Person;
 import models.Pickup;
 
 import java.sql.*;
@@ -227,5 +228,42 @@ public class DatabaseController {
             return pickup;
         }
         return pickup;
+    }
+
+
+    /**
+     * @TODO future improvement: cache the Person
+     * @param personId
+     * @return
+     * @throws SQLException
+     */
+    public Person getPerson(String personId) throws SQLException {
+        String query = "SELECT * FROM person " +
+                "WHERE phone = " + "'" + personId + "'" + ";";
+        Person person = null;
+
+        ResultSet resultSet = statement.executeQuery(query);
+
+        while (resultSet.next()) {
+            String firstName = resultSet.getString("firstName");
+            String lastName = resultSet.getString("lastName");
+            String street = resultSet.getString("street");
+            String city = resultSet.getString("city");
+            String state = resultSet.getString("state");
+            String postal = resultSet.getString("postal");
+            String country = resultSet.getString("country");
+            String email = resultSet.getString("email");
+            String phone = resultSet.getString("phone");
+            person = new Person(firstName, lastName, street,
+                  city, state, postal, country, email,
+                  phone);
+            return person;
+        }
+
+        return person;
+    }
+    public void close() throws SQLException {
+        statement.close();
+        conn.close();
     }
 }
