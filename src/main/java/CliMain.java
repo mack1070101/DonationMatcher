@@ -5,10 +5,7 @@ import models.Recipient;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by mackenzie on 07/08/17.
@@ -21,6 +18,7 @@ public class CliMain {
 
     public static void main(String args[]) throws IOException, SQLException {
         String defaultOutputFilename = "result.csv";
+        String outputFile = new String();
         String customerCSV = new String();
         String recipientCSV = new String();
 
@@ -62,6 +60,7 @@ public class CliMain {
         */
         customerCSV = "/home/mackenzie/workspace/copiaTest/src/test/java/testAssets/Customers.csv";
         recipientCSV = "/home/mackenzie/workspace/copiaTest/src/test/java/testAssets/Recipients.csv";
+        outputFile = "result.csv";
 
         FileController cFC = new FileController(customerCSV);
         FileController rFC = new FileController(recipientCSV);
@@ -103,5 +102,20 @@ public class CliMain {
         LogicController lc = new LogicController(dbC);
         HashMap<String, ArrayList<Recipient>> map = lc.findMatches();
 
+        Iterator it = map.entrySet().iterator();
+
+        FileController outputFileController = new FileController(outputFile);
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry)it.next();
+            try{
+                for(Recipient recipient: map.get(pair.getKey())){
+                    System.out.println(recipient.getPersonId());
+
+                }
+            }catch (Exception e){
+                System.out.println("\n");
+
+            }
         }
     }
+}

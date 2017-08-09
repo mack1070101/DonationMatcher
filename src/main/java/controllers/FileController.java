@@ -16,6 +16,7 @@ public class FileController {
     private boolean skippedFirstLine = false;
     private String filename;
     private BufferedReader br;
+    private PrintWriter pw;
     private Pattern pattern;
     private Matcher matcher;
 
@@ -41,7 +42,11 @@ public class FileController {
             throw new IllegalArgumentException();
         } else{
             this.filename = name;
-            this.br = new BufferedReader(new FileReader(this.filename));
+            try{
+                this.br = new BufferedReader(new FileReader(this.filename));
+            }catch(FileNotFoundException e){
+                this.pw = new PrintWriter(new File(this.filename));
+            }
         }
 
     }
@@ -83,4 +88,6 @@ public class FileController {
             return false;
         } else return new File(filename).exists();
     }
+
+//    public void fileWriter()
 }

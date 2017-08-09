@@ -20,10 +20,11 @@ public class DatabaseController {
     private Connection conn;
     Statement statement = null;
     int foodFieldMax = 63;
+
     /**
      * Constructor for database controller
      */
-    public DatabaseController(){
+    public DatabaseController() {
         try {
             Class.forName("org.sqlite.JDBC");
             conn = DriverManager.getConnection("jdbc:sqlite:results.db");
@@ -36,6 +37,7 @@ public class DatabaseController {
 
     /**
      * Generates table in SQLITE to hold person objects
+     *
      * @throws SQLException
      */
     public void createPersonsTable() throws SQLException {
@@ -55,6 +57,7 @@ public class DatabaseController {
 
     /**
      * Generates table in SQLITE to hold pickup objects
+     *
      * @throws SQLException
      */
     public void createPickupTable() throws SQLException {
@@ -71,6 +74,7 @@ public class DatabaseController {
 
     /**
      * Generates table in SQLITE to hold recipient objects
+     *
      * @throws SQLException
      */
     public void createRecipientTable() throws SQLException {
@@ -91,40 +95,40 @@ public class DatabaseController {
     }
 
     /**
-     *  Inserts the passed in array of strings into the persons table
-     *  from where it is called in CLI main. It is currently taking
-     *  a string for expediency
+     * Inserts the passed in array of strings into the persons table
+     * from where it is called in CLI main. It is currently taking
+     * a string for expediency
      *
-     *  @TODO make it take person object.
      * @param string
      * @throws SQLException
+     * @TODO make it take person object.
      */
     public void insertIntoPersonTable(String[] string) throws SQLException {
-        this.statement.executeUpdate("INSERT INTO Person VALUES('"+string[0]+"','"+string[1]+"'," + "'"+string[2]+"','"+string[3]+"','"+string[4]+"','"+string[5]+"'," + "'"+string[6]+"','"+string[7]+"','"+string[8]+"');");
+        this.statement.executeUpdate("INSERT INTO Person VALUES('" + string[0] + "','" + string[1] + "'," + "'" + string[2] + "','" + string[3] + "','" + string[4] + "','" + string[5] + "'," + "'" + string[6] + "','" + string[7] + "','" + string[8] + "');");
     }
 
     /**
-     *  Inserts the passed in array of strings into the pickup table
-     *  from where it is called in CLI main. It is currently taking
-     *  a string for expediency
+     * Inserts the passed in array of strings into the pickup table
+     * from where it is called in CLI main. It is currently taking
+     * a string for expediency
      *
-     *  @TODO make it take pickup object.
      * @param string
      * @throws SQLException
+     * @TODO make it take pickup object.
      */
     public void insertIntoPickupTable(String[] string) throws SQLException {
-        this.statement.executeUpdate("INSERT INTO Pickup VALUES('" + string[0] + "','" + string[1] + "'," + "'" + string[2] + "','" + string[3] + "','" + string[4] + "','" + string[5] +  "');");
+        this.statement.executeUpdate("INSERT INTO Pickup VALUES('" + string[0] + "','" + string[1] + "'," + "'" + string[2] + "','" + string[3] + "','" + string[4] + "','" + string[5] + "');");
     }
 
 
     /**
-     *  Inserts the passed in array of strings into the persons table
-     *  from where it is called in CLI main. It is currently taking
-     *  a string for expediency
+     * Inserts the passed in array of strings into the persons table
+     * from where it is called in CLI main. It is currently taking
+     * a string for expediency
      *
-     *  @TODO make it take recipient object.
      * @param string
      * @throws SQLException
+     * @TODO make it take recipient object.
      */
     public void insertIntoRecipientTable(String[] string) throws SQLException {
         this.statement.executeUpdate("INSERT INTO Recipient VALUES('" + string[0] + "','" + string[1] + "'," + "'" + string[2] + "','" + string[3] + "','" + string[4] + "','" + string[5] + "'," + "'" + string[6] + "','" + string[7] + "','" + string[8] + "','" + string[9] + "','" + string[10] + "');");
@@ -135,10 +139,11 @@ public class DatabaseController {
      * It builds a query string to execute as a ResultSet so that
      * the database can be queried line by line in your main function to reduce
      * memory overhead in the event of a large database
-     *
-     *
+     * <p>
+     * <p>
      * NOTE: Distance query is done as a simple bounding box. An Rtree would be implemented
      * in the future to support rapid geographic queries
+     *
      * @param pickup
      * @return result set to iterate on in main
      * @throws SQLException
@@ -152,8 +157,8 @@ public class DatabaseController {
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone(pickup.getTimeZoneId()));
         String time = simpleDateFormat.format(pickup.getPickupAt());
         //Determine binary representation of time
-        int timeAsInt = Integer.parseInt(time.substring(0,2));
-        int binaryRepTime = 1 << timeAsInt -8;
+        int timeAsInt = Integer.parseInt(time.substring(0, 2));
+        int binaryRepTime = 1 << timeAsInt - 8;
 
         //Sidelength requirement
         double side = 10 * 1.609344; // Sidelength of 10 miles converted to KM
@@ -162,19 +167,19 @@ public class DatabaseController {
         String dateLine;
 
         if (dayOfWeek.equals("Sun")) {
-            dateLine = "((sundayHours & " + binaryRepTime+ ") = " + binaryRepTime + ")";
+            dateLine = "((sundayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
         } else if (dayOfWeek.equals("Mon")) {
             dateLine = "((mondayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
         } else if (dayOfWeek.equals("Tue")) {
-            dateLine = "((tuesdayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+            dateLine = "((tuesdayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
         } else if (dayOfWeek.equals("Wed")) {
-            dateLine = "((wednesdayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+            dateLine = "((wednesdayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
         } else if (dayOfWeek.equals("Thu")) {
-            dateLine = "((thursdayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+            dateLine = "((thursdayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
         } else if (dayOfWeek.equals("Fri")) {
-            dateLine = "((fridayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+            dateLine = "((fridayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
         } else if (dayOfWeek.equals("Sat")) {
-            dateLine = "((saturdayHours & " + binaryRepTime + ") = " + binaryRepTime +")" ;
+            dateLine = "((saturdayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
         } else {
             throw new IllegalArgumentException();
         }
@@ -182,24 +187,43 @@ public class DatabaseController {
         // Build category requirement
         // Used to implement bitwise XOR in SQLITE as it lacks many nice things
         // https://stackoverflow.com/questions/16440831/bitwise-xor-in-sqlite-bitwise-not-not-working-as-i-expect
-        String restrictions = "((((~(restrictions&"+ foodFieldMax+"))&(restrictions|"+ foodFieldMax+"" +
-                ")) & "+pickup.getCategory()+") != 0)";
+        String restrictions = "((((~(restrictions&" + foodFieldMax + "))&(restrictions|" + foodFieldMax + "" +
+                ")) & " + pickup.getCategory() + ") != 0)";
 
 
         //Build distance requirement
         GeoController geoController = new GeoController();
         double boundingBox[] = geoController.boundingBox(pickup.getLatitude(), pickup.getLongitude(), side);
 
-        String distance = "((latitude >= "+boundingBox[0]+") AND (latitude <= "+boundingBox[1]+"))";
-        distance = distance + " AND " + "((longitude >= "+ boundingBox[2]+") AND (longitude <= "+boundingBox[3]+"))";
+        String distance = "((latitude >= " + boundingBox[0] + ") AND (latitude <= " + boundingBox[1] + "))";
+        distance = distance + " AND " + "((longitude >= " + boundingBox[2] + ") AND (longitude <= " + boundingBox[3] + "))";
 
         //Build query
         String query = "SELECT * FROM RECIPIENT " +
-                "WHERE "+ dateLine + " AND " +
-                        restrictions + " AND " +
-                        distance + " " +
-                "ORDER BY restrictions DESC;" ;
+                "WHERE " + dateLine + " AND " +
+                restrictions + " AND " +
+                distance + " " +
+                "ORDER BY restrictions DESC;";
 
         return statement.executeQuery(query);
+    }
+
+    public Pickup getPickup(String personId) throws SQLException {
+        String query = "SELECT * FROM pickup " +
+                "WHERE personId = " + personId + ";";
+        ResultSet resultSet = statement.executeQuery(query);
+
+        resultSet.next();
+        String person = resultSet.getString("personId");
+        double latitude = resultSet.getDouble("latitude");
+        double longitude = resultSet.getDouble("latitude");
+        int categories = resultSet.getInt("categories");
+        String pickupAt = resultSet.getString("pickupAt");
+        String timeZoneId = resultSet.getString("timeZoneId");
+
+        Pickup pickup = new Pickup(person, latitude, longitude, categories,pickupAt, timeZoneId);
+
+        System.out.println(query);
+        return pickup;
     }
 }

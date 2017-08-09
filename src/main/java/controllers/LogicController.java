@@ -58,6 +58,7 @@ public class LogicController {
         }
 
         // Search array of pickups for suitable recipients and return them
+        // maybe this should be moved into database controller @TODO
         for(Pickup p : pickups){
             rs = dbc.fetchSuitableRecipients(p);
             ArrayList<Recipient> recipients = new ArrayList<Recipient>();
