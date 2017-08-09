@@ -101,7 +101,7 @@ public class FileController {
                     "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName,recipientOwnerStreet,recipientOwnerPostal," +
                     "recipientOwnerState,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
                     "recipientRestrictions,recipientSunday,recipientMonday,recipientTuesday,recipientWednesday,recipientThursday" +
-                    "recipientFriday,RecipientSaturday");
+                    "recipientFriday,RecipientSaturday\n");
             writtenFirstLine = true;
         }
         Person pickupOwner = dbc.getPerson(pickup.getPersonId());
@@ -116,7 +116,7 @@ public class FileController {
                     "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName,recipientOwnerStreet,recipientOwnerPostal," +
                     "recipientOwnerState,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
                     "recipientRestrictions,recipientSunday,recipientMonday,recipientTuesday,recipientWednesday,recipientThursday" +
-                    "recipientFriday,RecipientSaturday");
+                    "recipientFriday,RecipientSaturday\n");
             writtenFirstLine = true;
         }
         Person pickupOwner = dbc.getPerson(pickup.getPersonId());
