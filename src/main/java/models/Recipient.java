@@ -4,7 +4,7 @@ package models;
  * Created by mackenzie on 07/08/17.
  *
  *
- * @TODO better data validation
+ * TODO better data validation
  *
  * The recipient class represents an event where food must be recieved
  */

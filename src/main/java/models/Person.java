@@ -10,8 +10,8 @@ import javax.mail.internet.InternetAddress;
  * The person object represents a person, and their personal information,
  * whether they are a customer of recipient of food
  *
- * @TODO validate data better, including empty fields
- * @TODO perhaps tear out almost all getters and setters
+ * TODO future validate data better, including empty fields
+ * TODO perhaps tear out almost all getters and setters
  */
 public class Person {
 
@@ -30,7 +30,7 @@ public class Person {
      * @param firstName        A person's first name
      * @param lastName         A person's last name
      * @param street           The street address where the person is located
-     * @param city
+     * @param city             The city where the person is located
      * @param state            The state or province where the person is located
      * @param postal           The postal/zip code of the person's street address
      * @param country          The country in which the person is located
@@ -61,7 +61,7 @@ public class Person {
 
     /**
      * Checks whether an email is valid or not
-     * @param email
+     * @param email string representation of the email to be checked
      * @return true if the email is valid, false if it is not
      */
     public boolean checkEmail(String email) {
@@ -75,38 +75,6 @@ public class Person {
         }
 
         return result;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public String getPostal() {
-        return postal;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getEmail() {
-        return email;
     }
 
     public String getPhone() {

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  *
  * Handles file operations, opening, reading and validation
  *
- * @TODO document stuff
+ * TODO document stuff
  */
 public class FileController {
 
@@ -38,8 +38,8 @@ public class FileController {
 
     /**
      * File controller to handle IO on a given file
-     * @param name
-     * @throws FileNotFoundException
+     * @param name filename that the controller will handle
+     * @throws FileNotFoundException if file not found
      */
     public FileController(String name) throws FileNotFoundException {
         pattern = Pattern.compile(CSV_PATTERN);
@@ -90,8 +90,8 @@ public class FileController {
 
     /**
      * Uses regex to check that a filename is valid and that it exists
-     * @param filename
-     * @return
+     * @param filename filename that will be checked
+     * @return True if valid, False if not valid
      */
     public boolean isValid(final String filename){
         matcher = pattern.matcher(filename);

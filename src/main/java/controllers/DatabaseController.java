@@ -14,8 +14,8 @@ import java.util.TimeZone;
  * used to store and query for information.
  *
  *
- * @TODO in the future, track amounts of food to factor that in on matching
- * @TODO convert to singleton pattern
+ * TODO in the future, track amounts of food to factor that in on matching
+ * TODO convert to singleton pattern
  */
 public class DatabaseController {
     private String databaseName = "results.db";
@@ -54,7 +54,7 @@ public class DatabaseController {
     /**
      * Generates table in SQLITE to hold person objects
      *
-     * @throws SQLException
+     * @throws SQLException     if problem occurs
      */
     public void createPersonsTable() throws SQLException {
         statement.executeUpdate("DROP TABLE IF EXISTS Person;");
@@ -117,9 +117,9 @@ public class DatabaseController {
      * every field execept Phone. This was done to ensure maximum flexibility
      * and so that inputs are not lost.
      *
-     * @param string
+     * @param string array of strings containing person data
      * @throws SQLException
-     * @TODO make it take person object.
+     * TODO make it take person object.
      */
     public void insertIntoPersonTable(String[] string) throws SQLException {
         if(!string[8].matches(".*\\w.*")) throw new SQLException(); // Phone number must be specified
@@ -131,9 +131,9 @@ public class DatabaseController {
      * from where it is called in CLI main. It is currently taking
      * a string for expediency
      *
-     * @param string
+     * @param string containing pickup data
      * @throws SQLException
-     * @TODO make it take pickup object.
+     * TODO make it take pickup object.
      */
     public void insertIntoPickupTable(String[] string) throws SQLException {
         this.statement.executeUpdate("INSERT INTO Pickup VALUES('" + string[0] + "','" + string[1] + "'," + "'" + string[2] + "','" + string[3] + "','" + string[4] + "','" + string[5] + "');");
@@ -147,7 +147,7 @@ public class DatabaseController {
      *
      * @param string
      * @throws SQLException
-     * @TODO make it take recipient object.
+     * TODO make it take recipient object.
      */
     public void insertIntoRecipientTable(String[] string) throws SQLException {
         this.statement.executeUpdate("INSERT INTO Recipient VALUES('" + string[0] + "','" + string[1] + "'," + "'" + string[2] + "','" + string[3] + "','" + string[4] + "','" + string[5] + "'," + "'" + string[6] + "','" + string[7] + "','" + string[8] + "','" + string[9] + "','" + string[10] + "');");
@@ -163,7 +163,7 @@ public class DatabaseController {
      * NOTE: Distance query is done as a simple bounding box. An Rtree would be implemented
      * in the future to support rapid geographic queries
      *
-     * @param pickup
+     * @param pickup pickup object that suitable recipients should be found for
      * @return result set to iterate on in main
      * @throws SQLException
      */
@@ -251,9 +251,9 @@ public class DatabaseController {
 
 
     /**
-     * @TODO future improvement: cache the Person
+     * TODO future improvement: cache the Person
      * @param personId
-     * @return
+     * @return a Person object
      * @throws SQLException
      */
     public Person getPerson(String personId) throws SQLException {

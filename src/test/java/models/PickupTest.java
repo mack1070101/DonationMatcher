@@ -2,15 +2,11 @@ package models;
 
 import org.junit.Test;
 
-import java.util.UUID;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by mackenzie on 07/08/17.
  *
  *
- * @TODO add database hook in for person
+ * ODO add database hook in for person
  */
 public class PickupTest {
     Person goodPerson = new Person("Leeroy", "Jenkins",

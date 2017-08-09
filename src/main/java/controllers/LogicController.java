@@ -16,15 +16,15 @@ import java.util.HashMap;
  * Would use sqlite and Rtrees if time allowed
  *
  * Handles the logic of querying and selecting the appropriate matches
- * @TODO change from keying on PERSONID to a UUID?
- * @TODO in the future, track amounts of food to factor that in on matching
+ * TODO change from keying on PERSONID to a UUID?
+ * TODO in the future, track amounts of food to factor that in on matching
  */
 public class LogicController {
     private DatabaseController dbc;
 
     /**
      * Constructor for a logic controller
-     * @param dbc
+     * @param dbc database controller that the logic controller will handl
      */
     public LogicController(DatabaseController dbc) {
         this.dbc = dbc;
@@ -34,7 +34,7 @@ public class LogicController {
      * Creates a hashmap contianing the ID of a pickup and their matching recipients
      *
      * @return a hashmap that has a key of a pickup and an arraylist of recipients
-     * @throws SQLException
+     * @throws SQLException if query encounters problems
      */
     public HashMap<String, ArrayList<Recipient>> findMatches() throws SQLException {
         HashMap<String, ArrayList<Recipient>> map = new HashMap<String, ArrayList<Recipient>>();

@@ -2,14 +2,12 @@ package models;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by mackenzie on 07/08/17.
  *
  *
- * @TODO improve testing of input valdiation
- * @TODO add testing for rest of week
+ * TODO improve testing of input valdiation
+ * TODO add testing for rest of week
  */
 public class RecipientTest {
     //Sample data for testing getters and setters

@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
  *
  * Tests written for the @see Person class
  *
- * @Todo Better data validation
+ * Todo Better data validation
  * In the future, better validation should be done on the inputs to ensure
  * valid data (states are in the correct country), phone numbers are correct
  * format, country codes conform to some specification, postal codes conform

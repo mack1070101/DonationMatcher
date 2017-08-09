@@ -10,7 +10,7 @@ import java.util.Date;
  * for a pickup and is associated with a person.
  *
  *
- * @TODO INPUT VALIDTION
+ * TODO INPUT VALIDTION
  */
 
 public class Pickup {
@@ -50,13 +50,14 @@ public class Pickup {
     /**
      * Constructor for the pickup class
      *
-     * @param personId
-     * @param lat
-     * @param lon
-     * @param category
-     * @param date
-     * @param timeZoneId
-     * @note ISO 8601 date format is validated using the following method
+     * @param personId ID of the person that owns this pickup
+     * @param lat latitude where the pickup is located
+     * @param lon longitude where the pickup is located
+     * @param category category of pickup using the 6 bit packed int
+     * @param date date on which the pickup will occur
+     * @param timeZoneId IANA ID of the timezone
+     *
+     * note ISO 8601 date format is validated using the following method
      * https://stackoverflow.com/questions/2201925/converting-iso-8601-compliant-string-to-java-util-date
      */
     public Pickup(String personId, double lat, double lon, int category,
