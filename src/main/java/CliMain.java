@@ -54,7 +54,7 @@ public class CliMain {
                 System.out.println("Please enter a valid filename");
             }
         }
-        System.out.print("Enter desired filename of output or leave blank for" + defaultOutputFilename + ": ");
+        System.out.print("Enter desired filename of output or leave blank for " + defaultOutputFilename + ": ");
 
         String outputFile = scanner.nextLine();
         if (outputFile.equals("")){

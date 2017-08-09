@@ -96,12 +96,13 @@ public class FileController {
 
     public void writeLine(Pickup pickup, Recipient recipient, DatabaseController dbc) throws SQLException {
         if(!writtenFirstLine){
-            pw.write("pickupOwnerFirstName,pickupOwnerLastName,pickupOwnerStreet,pickupOwnerPostal," +
-                    "pickupOwnerState,pickupOwnerEmail,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
-                    "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName,recipientOwnerStreet,recipientOwnerPostal," +
-                    "recipientOwnerState,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
-                    "recipientRestrictions,recipientSunday,recipientMonday,recipientTuesday,recipientWednesday,recipientThursday" +
-                    "recipientFriday,RecipientSaturday\n");
+            pw.write("pickupOwnerFirstName,pickupOwnerLastName,pickupOwnerStreet,pickupOwnerCity,pickupOwnerState," +
+                    "pickupOwnerPostal,pickupOwnerCountry,,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
+                    "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName," +
+                    "recipientOwnerStreet,recipientOwnerCity,recipientOwnerState,recipientOwnerPostal," +
+                    "recipientOwnerCountry,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
+                    "recipientRestrictions,recipientSunday,recipientMonday,recipientTuesday,recipientWednesday," +
+                    "recipientThursday,recipientFriday,RecipientSaturday\n");
             writtenFirstLine = true;
         }
         Person pickupOwner = dbc.getPerson(pickup.getPersonId());
@@ -111,12 +112,13 @@ public class FileController {
     }
     public void writeLine(Pickup pickup, DatabaseController dbc) throws SQLException {
         if(!writtenFirstLine){
-            pw.write("pickupOwnerFirstName,pickupOwnerLastName,pickupOwnerStreet,pickupOwnerPostal," +
-                    "pickupOwnerState,pickupOwnerEmail,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
-                    "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName,recipientOwnerStreet,recipientOwnerPostal," +
-                    "recipientOwnerState,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
-                    "recipientRestrictions,recipientSunday,recipientMonday,recipientTuesday,recipientWednesday,recipientThursday" +
-                    "recipientFriday,RecipientSaturday\n");
+            pw.write("pickupOwnerFirstName,pickupOwnerLastName,pickupOwnerStreet,pickupOwnerCity,pickupOwnerState," +
+                    "pickupOwnerPostal,pickupOwnerCountry,,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
+                    "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName," +
+                    "recipientOwnerStreet,recipientOwnerCity,recipientOwnerState,recipientOwnerPostal," +
+                    "recipientOwnerCountry,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
+                    "recipientRestrictions,recipientSunday,recipientMonday,recipientTuesday,recipientWednesday," +
+                    "recipientThursday,recipientFriday,RecipientSaturday\n");
             writtenFirstLine = true;
         }
         Person pickupOwner = dbc.getPerson(pickup.getPersonId());

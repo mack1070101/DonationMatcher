@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: models.PersonTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE! - in models.PersonTest
-testBadPersonInputs(models.PersonTest)  Time elapsed: 0 sec  <<< FAILURE!
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec <<< FAILURE! - in models.PersonTest
+testBadPersonInputs(models.PersonTest)  Time elapsed: 0.001 sec  <<< FAILURE!
 java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)

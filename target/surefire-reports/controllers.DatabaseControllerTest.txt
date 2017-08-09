@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: controllers.DatabaseControllerTest
 -------------------------------------------------------------------------------
-Tests run: 17, Failures: 2, Errors: 3, Skipped: 0, Time elapsed: 0.571 sec <<< FAILURE! - in controllers.DatabaseControllerTest
-testInsertIntoPickupTable_BadInput(controllers.DatabaseControllerTest)  Time elapsed: 0.019 sec  <<< FAILURE!
+Tests run: 17, Failures: 2, Errors: 3, Skipped: 0, Time elapsed: 0.866 sec <<< FAILURE! - in controllers.DatabaseControllerTest
+testInsertIntoPickupTable_BadInput(controllers.DatabaseControllerTest)  Time elapsed: 0.033 sec  <<< FAILURE!
 java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
@@ -23,7 +23,7 @@ java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 
-getPickup_PickupDNE(controllers.DatabaseControllerTest)  Time elapsed: 0.014 sec  <<< ERROR!
+getPickup_PickupDNE(controllers.DatabaseControllerTest)  Time elapsed: 0.016 sec  <<< ERROR!
 java.sql.SQLException: ResultSet closed
 	at org.sqlite.RS.checkOpen(RS.java:63)
 	at org.sqlite.RS.findColumn(RS.java:108)
@@ -31,7 +31,7 @@ java.sql.SQLException: ResultSet closed
 	at controllers.DatabaseController.getPickup(DatabaseController.java:239)
 	at controllers.DatabaseControllerTest.getPickup_PickupDNE(DatabaseControllerTest.java:121)
 
-getPerson_PersonDNE(controllers.DatabaseControllerTest)  Time elapsed: 0.013 sec  <<< ERROR!
+getPerson_PersonDNE(controllers.DatabaseControllerTest)  Time elapsed: 0.02 sec  <<< ERROR!
 java.sql.SQLException: ResultSet closed
 	at org.sqlite.RS.checkOpen(RS.java:63)
 	at org.sqlite.RS.findColumn(RS.java:108)
@@ -39,7 +39,7 @@ java.sql.SQLException: ResultSet closed
 	at controllers.DatabaseController.getPerson(DatabaseController.java:267)
 	at controllers.DatabaseControllerTest.getPerson_PersonDNE(DatabaseControllerTest.java:138)
 
-testInsertIntoRecipientTable_BadInput(controllers.DatabaseControllerTest)  Time elapsed: 0.004 sec  <<< FAILURE!
+testInsertIntoRecipientTable_BadInput(controllers.DatabaseControllerTest)  Time elapsed: 0.006 sec  <<< FAILURE!
 java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
@@ -60,7 +60,7 @@ java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 
-findMatches(controllers.DatabaseControllerTest)  Time elapsed: 0.004 sec  <<< ERROR!
+findMatches(controllers.DatabaseControllerTest)  Time elapsed: 0.003 sec  <<< ERROR!
 java.lang.NullPointerException: null
 	at controllers.LogicControllerTest.findMatches(LogicControllerTest.java:66)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)

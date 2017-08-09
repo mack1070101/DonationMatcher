@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="models.PickupTest" time="0.001" tests="6" errors="0" skipped="0" failures="4">
+<testsuite name="models.PickupTest" time="0.005" tests="6" errors="0" skipped="0" failures="4">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -79,7 +79,7 @@
 </failure>
   </testcase>
   <testcase name="testGoodPickup" classname="models.PickupTest" time="0"/>
-  <testcase name="testPickwithBadLat" classname="models.PickupTest" time="0">
+  <testcase name="testPickwithBadLat" classname="models.PickupTest" time="0.001">
     <failure message="Expected exception: java.lang.IllegalArgumentException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
@@ -99,7 +99,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 </failure>
   </testcase>
-  <testcase name="testPickwithBadLon" classname="models.PickupTest" time="0.001">
+  <testcase name="testPickwithBadLon" classname="models.PickupTest" time="0">
     <failure message="Expected exception: java.lang.IllegalArgumentException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
@@ -119,7 +119,7 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 </failure>
   </testcase>
-  <testcase name="testPickWithBadCategory" classname="models.PickupTest" time="0">
+  <testcase name="testPickWithBadCategory" classname="models.PickupTest" time="0.004">
     <failure message="Expected exception: java.lang.IllegalArgumentException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
