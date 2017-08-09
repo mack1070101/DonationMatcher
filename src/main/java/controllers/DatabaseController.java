@@ -15,6 +15,7 @@ import java.util.TimeZone;
  *
  *
  * @TODO in the future, track amounts of food to factor that in on matching
+ * @TODO convert to singleton pattern
  */
 public class DatabaseController {
     private String databaseName = "results.db";
@@ -28,7 +29,7 @@ public class DatabaseController {
     public DatabaseController() {
         try {
             Class.forName("org.sqlite.JDBC");
-            conn = DriverManager.getConnection("jdbc:sqlite:results.db");
+            conn = DriverManager.getConnection("jdbc:sqlite:" +databaseName);
 
             statement = conn.createStatement();
         } catch (Exception e) {
@@ -36,6 +37,20 @@ public class DatabaseController {
         }
     }
 
+    /**
+     * Constructor for database controller
+     * @param databaseName name of database you want to use
+     */
+    public DatabaseController(String databaseName) {
+        try {
+            Class.forName("org.sqlite.JDBC");
+            conn = DriverManager.getConnection("jdbc:sqlite:" +databaseName);
+
+            statement = conn.createStatement();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     /**
      * Generates table in SQLITE to hold person objects
      *
@@ -98,13 +113,16 @@ public class DatabaseController {
     /**
      * Inserts the passed in array of strings into the persons table
      * from where it is called in CLI main. It is currently taking
-     * a string for expediency
+     * a string for expediency. Note it will take empty strings for
+     * every field execept Phone. This was done to ensure maximum flexibility
+     * and so that inputs are not lost.
      *
      * @param string
      * @throws SQLException
      * @TODO make it take person object.
      */
     public void insertIntoPersonTable(String[] string) throws SQLException {
+        if(!string[8].matches(".*\\w.*")) throw new SQLException(); // Phone number must be specified
         this.statement.executeUpdate("INSERT INTO Person VALUES('" + string[0] + "','" + string[1] + "'," + "'" + string[2] + "','" + string[3] + "','" + string[4] + "','" + string[5] + "'," + "'" + string[6] + "','" + string[7] + "','" + string[8] + "');");
     }
 

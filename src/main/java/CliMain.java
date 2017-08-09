@@ -32,6 +32,8 @@ public class CliMain {
 
         Scanner scanner = new Scanner(System.in);
         FileController fileController = new FileController();
+
+        //@TODO uncomment this code
         /*
         while(true) {
             System.out.print("Enter filename of csv containing customer data: ");
