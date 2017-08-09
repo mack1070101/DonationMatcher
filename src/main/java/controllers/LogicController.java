@@ -21,8 +21,6 @@ import java.util.HashMap;
  */
 public class LogicController {
     private DatabaseController dbc;
-    private int earthRadius = 3959; //miles
-    private double angluarRadius = 10 / earthRadius;
 
     /**
      * Constructor for a logic controller
@@ -42,19 +40,12 @@ public class LogicController {
         HashMap<String, ArrayList<Recipient>> map = new HashMap<String, ArrayList<Recipient>>();
 
         // Make array of pickups  @TODO refactor to just pull ID
-        ResultSet rs = dbc.statement.executeQuery("SELECT * from pickup;");
-        ArrayList<Pickup> pickups = new ArrayList<Pickup>();
+        ResultSet rs = dbc.statement.executeQuery("SELECT personId from pickup;");
+        ArrayList<String> pickupStrings = new ArrayList<String>();
         while (rs.next()) {
             String personId = rs.getString("personId");
-            double latitude = rs.getDouble("latitude");
-            double longitude = rs.getDouble("longitude");
-            int category = rs.getInt("categories");
-            String pickupAt = rs.getString("pickupAt");
-            String timeZoneId = rs.getString("timeZoneId");
-            Pickup p = new Pickup(personId, latitude, longitude, category,
-                    pickupAt, timeZoneId);
 
-            pickups.add(p);
+            pickupStrings.add(p);
         }
 
         // Search array of pickups for suitable recipients and return them
