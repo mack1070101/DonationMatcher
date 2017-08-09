@@ -97,7 +97,7 @@ public class FileController {
     public void writeLine(Pickup pickup, Recipient recipient, DatabaseController dbc) throws SQLException {
         if(!writtenFirstLine){
             pw.write("pickupOwnerFirstName,pickupOwnerLastName,pickupOwnerStreet,pickupOwnerCity,pickupOwnerState," +
-                    "pickupOwnerPostal,pickupOwnerCountry,,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
+                    "pickupOwnerPostal,pickupOwnerCountry,pickupOwnerEmail,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
                     "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName," +
                     "recipientOwnerStreet,recipientOwnerCity,recipientOwnerState,recipientOwnerPostal," +
                     "recipientOwnerCountry,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
@@ -113,7 +113,7 @@ public class FileController {
     public void writeLine(Pickup pickup, DatabaseController dbc) throws SQLException {
         if(!writtenFirstLine){
             pw.write("pickupOwnerFirstName,pickupOwnerLastName,pickupOwnerStreet,pickupOwnerCity,pickupOwnerState," +
-                    "pickupOwnerPostal,pickupOwnerCountry,,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
+                    "pickupOwnerPostal,pickupOwnerCountry,pickupOwnerEmail,pickupOwnerPhone,pickupLatitude,pickupLongitude," +
                     "pickupCategories,pickupAt,pickupTimeZoneId,recipientOwnerFirstName,recipientOwnerLastName," +
                     "recipientOwnerStreet,recipientOwnerCity,recipientOwnerState,recipientOwnerPostal," +
                     "recipientOwnerCountry,recipientOwnerEmail,recipientOwnerPhone,recipientLatitude,recipientLongitude," +
