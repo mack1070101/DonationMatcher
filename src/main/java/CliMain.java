@@ -19,9 +19,8 @@ public class CliMain {
 
     public static void main(String args[]) throws IOException, SQLException {
         String defaultOutputFilename = "result.csv";
-        String outputFile = new String();
-        String customerCSV = new String();
-        String recipientCSV = new String();
+        String customerCSV;
+        String recipientCSV;
 
         System.out.println(" _______  _____   _____  _____ _______      _______ _______ _______ _______");
         System.out.println(" |       |     | |_____]   |   |_____|         |    |______ |______    |   ");
@@ -33,8 +32,6 @@ public class CliMain {
         Scanner scanner = new Scanner(System.in);
         FileController fileController = new FileController();
 
-        //@TODO uncomment this code
-        /*
         while(true) {
             System.out.print("Enter filename of csv containing customer data: ");
             customerCSV = scanner.nextLine();
@@ -60,9 +57,7 @@ public class CliMain {
 
         String outputFile = scanner.nextLine();
         if (outputFile.equals("")) outputFile = defaultOutputFilename;
-        */
-        customerCSV = "/home/mackenzie/workspace/copiaTest/src/test/java/testAssets/Customers.csv";
-        recipientCSV = "/home/mackenzie/workspace/copiaTest/src/test/java/testAssets/Recipients.csv";
+
         outputFile = "result.csv";
 
         FileController cFC = new FileController(customerCSV);

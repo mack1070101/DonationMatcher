@@ -82,26 +82,25 @@ public class Person {
     }
 
     public String toCsv(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(firstName);
-        sb.append(",");
-        sb.append(lastName);
-        sb.append(",");
-        sb.append(street);
-        sb.append(",");
-        sb.append(city);
-        sb.append(",");
-        sb.append(state);
-        sb.append(",");
-        sb.append(postal);
-        sb.append(",");
-        sb.append(country);
-        sb.append(",");
-        sb.append(email);
-        sb.append(",");
-        sb.append(phone);
+        String sb = firstName +
+                "," +
+                lastName +
+                "," +
+                street +
+                "," +
+                city +
+                "," +
+                state +
+                "," +
+                postal +
+                "," +
+                country +
+                "," +
+                email +
+                "," +
+                phone;
 
-        return sb.toString();
+        return sb;
     }
 }
 

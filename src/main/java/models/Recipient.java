@@ -43,29 +43,27 @@ public class Recipient {
         return personId;
     }
     public String toCsv(){
-        StringBuilder sb = new StringBuilder();
+        String sb = String.valueOf(latitude) +
+                "," +
+                longitude +
+                "," +
+                restrictions +
+                "," +
+                sundayHours +
+                "," +
+                mondayHours +
+                "," +
+                tuesdayHours +
+                "," +
+                wednesdayHours +
+                "," +
+                thursdayHours +
+                "," +
+                fridayHours +
+                "," +
+                saturdayHours;
 
-        sb.append(latitude);
-        sb.append(",");
-        sb.append(longitude);
-        sb.append(",");
-        sb.append(restrictions);
-        sb.append(",");
-        sb.append(sundayHours);
-        sb.append(",");
-        sb.append(mondayHours);
-        sb.append(",");
-        sb.append(tuesdayHours);
-        sb.append(",");
-        sb.append(wednesdayHours);
-        sb.append(",");
-        sb.append(thursdayHours);
-        sb.append(",");
-        sb.append(fridayHours);
-        sb.append(",");
-        sb.append(saturdayHours);
-
-        return sb.toString();
+        return sb;
     }
 }
 

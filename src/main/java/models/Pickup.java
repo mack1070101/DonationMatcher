@@ -72,18 +72,16 @@ public class Pickup {
     }
 
     public String toCsv() {
-        StringBuilder sb = new StringBuilder();
+        String sb = String.valueOf(latitude) +
+                "," +
+                longitude +
+                "," +
+                category +
+                "," +
+                pickupAt +
+                "," +
+                timeZoneId;
 
-        sb.append(latitude);
-        sb.append(",");
-        sb.append(longitude);
-        sb.append(",");
-        sb.append(category);
-        sb.append(",");
-        sb.append(pickupAt);
-        sb.append(",");
-        sb.append(timeZoneId);
-
-        return sb.toString();
+        return sb;
     }
 }

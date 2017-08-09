@@ -93,11 +93,9 @@ public class FileController {
      * @param filename filename that will be checked
      * @return True if valid, False if not valid
      */
-    public boolean isValid(final String filename){
+    public boolean isValid(final String filename) {
         matcher = pattern.matcher(filename);
-        if(!matcher.matches()){
-            return false;
-        } else return new File(filename).exists();
+        return matcher.matches() && new File(filename).exists();
     }
 
     public void writeLine(Pickup pickup, Recipient recipient, DatabaseController dbc) throws SQLException {
