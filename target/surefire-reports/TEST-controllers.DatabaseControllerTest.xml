@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="controllers.DatabaseControllerTest" time="0.274" tests="17" errors="3" skipped="0" failures="2">
+<testsuite name="controllers.DatabaseControllerTest" time="0.278" tests="16" errors="0" skipped="0" failures="2">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -58,12 +58,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="createPersonsTable" classname="controllers.DatabaseControllerTest" time="0.018"/>
-  <testcase name="insertIntoRecipientTable" classname="controllers.DatabaseControllerTest" time="0.013"/>
-  <testcase name="fetchSuitableRecipients" classname="controllers.DatabaseControllerTest" time="0"/>
-  <testcase name="testInsertIntoPersonTable_NoTable" classname="controllers.DatabaseControllerTest" time="0.005"/>
-  <testcase name="createRecipientTable" classname="controllers.DatabaseControllerTest" time="0.017"/>
-  <testcase name="testInsertIntoPickupTable_BadInput" classname="controllers.DatabaseControllerTest" time="0.033">
+  <testcase name="createPersonsTable" classname="controllers.DatabaseControllerTest" time="0.032"/>
+  <testcase name="insertIntoRecipientTable" classname="controllers.DatabaseControllerTest" time="0.021"/>
+  <testcase name="fetchSuitableRecipients" classname="controllers.DatabaseControllerTest" time="0.001"/>
+  <testcase name="testInsertIntoPersonTable_NoTable" classname="controllers.DatabaseControllerTest" time="0.004"/>
+  <testcase name="createRecipientTable" classname="controllers.DatabaseControllerTest" time="0.011"/>
+  <testcase name="testInsertIntoPickupTable_BadInput" classname="controllers.DatabaseControllerTest" time="0.019">
     <failure message="Expected exception: java.sql.SQLException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
@@ -85,32 +85,16 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 </failure>
   </testcase>
-  <testcase name="getPickup_PickupDNE" classname="controllers.DatabaseControllerTest" time="0.016">
-    <error message="ResultSet closed" type="java.sql.SQLException">java.sql.SQLException: ResultSet closed
-	at org.sqlite.RS.checkOpen(RS.java:63)
-	at org.sqlite.RS.findColumn(RS.java:108)
-	at org.sqlite.RS.getString(RS.java:317)
-	at controllers.DatabaseController.getPickup(DatabaseController.java:239)
-	at controllers.DatabaseControllerTest.getPickup_PickupDNE(DatabaseControllerTest.java:121)
-</error>
-  </testcase>
-  <testcase name="testInsertIntoPickupTable_NoTable" classname="controllers.DatabaseControllerTest" time="0.012"/>
-  <testcase name="getPerson_PersonDNE" classname="controllers.DatabaseControllerTest" time="0.02">
-    <error message="ResultSet closed" type="java.sql.SQLException">java.sql.SQLException: ResultSet closed
-	at org.sqlite.RS.checkOpen(RS.java:63)
-	at org.sqlite.RS.findColumn(RS.java:108)
-	at org.sqlite.RS.getString(RS.java:317)
-	at controllers.DatabaseController.getPerson(DatabaseController.java:267)
-	at controllers.DatabaseControllerTest.getPerson_PersonDNE(DatabaseControllerTest.java:138)
-</error>
-  </testcase>
-  <testcase name="getPerson" classname="controllers.DatabaseControllerTest" time="0.033"/>
-  <testcase name="getPickup" classname="controllers.DatabaseControllerTest" time="0.064"/>
-  <testcase name="createPickupTable" classname="controllers.DatabaseControllerTest" time="0.008"/>
-  <testcase name="testInsertIntoRecipientTable_NoTable" classname="controllers.DatabaseControllerTest" time="0.003"/>
-  <testcase name="insertIntoPickupTable" classname="controllers.DatabaseControllerTest" time="0.014"/>
-  <testcase name="testInsertIntoPersonTable_BadInput" classname="controllers.DatabaseControllerTest" time="0.009"/>
-  <testcase name="testInsertIntoRecipientTable_BadInput" classname="controllers.DatabaseControllerTest" time="0.006">
+  <testcase name="getPickup_PickupDNE" classname="controllers.DatabaseControllerTest" time="0.018"/>
+  <testcase name="testInsertIntoPickupTable_NoTable" classname="controllers.DatabaseControllerTest" time="0.004"/>
+  <testcase name="getPerson_PersonDNE" classname="controllers.DatabaseControllerTest" time="0.019"/>
+  <testcase name="getPerson" classname="controllers.DatabaseControllerTest" time="0.032"/>
+  <testcase name="getPickup" classname="controllers.DatabaseControllerTest" time="0.059"/>
+  <testcase name="createPickupTable" classname="controllers.DatabaseControllerTest" time="0.022"/>
+  <testcase name="testInsertIntoRecipientTable_NoTable" classname="controllers.DatabaseControllerTest" time="0"/>
+  <testcase name="insertIntoPickupTable" classname="controllers.DatabaseControllerTest" time="0.015"/>
+  <testcase name="testInsertIntoPersonTable_BadInput" classname="controllers.DatabaseControllerTest" time="0.019"/>
+  <testcase name="testInsertIntoRecipientTable_BadInput" classname="controllers.DatabaseControllerTest" time="0.002">
     <failure message="Expected exception: java.sql.SQLException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
@@ -131,35 +115,5 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 </failure>
-  </testcase>
-  <testcase name="findMatches" classname="controllers.DatabaseControllerTest" time="0.003">
-    <error type="java.lang.NullPointerException:">java.lang.NullPointerException: null
-	at controllers.LogicControllerTest.findMatches(LogicControllerTest.java:66)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-</error>
   </testcase>
 </testsuite>

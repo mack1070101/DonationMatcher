@@ -4,6 +4,7 @@ import controllers.LogicController;
 import models.Pickup;
 import models.Recipient;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.*;
@@ -30,9 +31,11 @@ public class CliMain {
         System.out.println("\nA programming challenge by Mackenzie Bligh");
         System.out.println("See https://github.com/mack1070101/copiaTest/wiki for docs and details");
 
+
         Scanner scanner = new Scanner(System.in);
         FileController fileController = new FileController();
 
+        //TODO validate first line of file to ensure that they are the correct file
         while(true) {
             System.out.print("Enter filename of csv containing customer data: ");
             customerCSV = scanner.nextLine();
@@ -54,12 +57,14 @@ public class CliMain {
                 System.out.println("Please enter a valid filename");
             }
         }
-        System.out.print("Enter desired filename of output or leave blank for " + defaultOutputFilename + ": ");
-
+        System.out.print("NOTE: This will overwrite the file if it exists.\nEnter desired filename of output or leave blank for " + defaultOutputFilename + ": ");
         String outputFile = scanner.nextLine();
         if (outputFile.equals("")){
             outputFile = defaultOutputFilename;
         }
+        File o = new File(outputFile);
+        o.delete();
+
 
         FileController cFC = new FileController(customerCSV);
         FileController rFC = new FileController(recipientCSV);

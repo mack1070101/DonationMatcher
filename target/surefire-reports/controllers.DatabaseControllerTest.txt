@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: controllers.DatabaseControllerTest
 -------------------------------------------------------------------------------
-Tests run: 17, Failures: 2, Errors: 3, Skipped: 0, Time elapsed: 0.866 sec <<< FAILURE! - in controllers.DatabaseControllerTest
-testInsertIntoPickupTable_BadInput(controllers.DatabaseControllerTest)  Time elapsed: 0.033 sec  <<< FAILURE!
+Tests run: 16, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.956 sec <<< FAILURE! - in controllers.DatabaseControllerTest
+testInsertIntoPickupTable_BadInput(controllers.DatabaseControllerTest)  Time elapsed: 0.019 sec  <<< FAILURE!
 java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
@@ -23,54 +23,9 @@ java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
 
-getPickup_PickupDNE(controllers.DatabaseControllerTest)  Time elapsed: 0.016 sec  <<< ERROR!
-java.sql.SQLException: ResultSet closed
-	at org.sqlite.RS.checkOpen(RS.java:63)
-	at org.sqlite.RS.findColumn(RS.java:108)
-	at org.sqlite.RS.getString(RS.java:317)
-	at controllers.DatabaseController.getPickup(DatabaseController.java:239)
-	at controllers.DatabaseControllerTest.getPickup_PickupDNE(DatabaseControllerTest.java:121)
-
-getPerson_PersonDNE(controllers.DatabaseControllerTest)  Time elapsed: 0.02 sec  <<< ERROR!
-java.sql.SQLException: ResultSet closed
-	at org.sqlite.RS.checkOpen(RS.java:63)
-	at org.sqlite.RS.findColumn(RS.java:108)
-	at org.sqlite.RS.getString(RS.java:317)
-	at controllers.DatabaseController.getPerson(DatabaseController.java:267)
-	at controllers.DatabaseControllerTest.getPerson_PersonDNE(DatabaseControllerTest.java:138)
-
-testInsertIntoRecipientTable_BadInput(controllers.DatabaseControllerTest)  Time elapsed: 0.006 sec  <<< FAILURE!
+testInsertIntoRecipientTable_BadInput(controllers.DatabaseControllerTest)  Time elapsed: 0.002 sec  <<< FAILURE!
 java.lang.AssertionError: Expected exception: java.sql.SQLException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:264)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:153)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:124)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:200)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:153)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:103)
-
-findMatches(controllers.DatabaseControllerTest)  Time elapsed: 0.003 sec  <<< ERROR!
-java.lang.NullPointerException: null
-	at controllers.LogicControllerTest.findMatches(LogicControllerTest.java:66)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
 	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
 	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
