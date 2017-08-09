@@ -50,18 +50,17 @@ public class Pickup {
     /**
      * Constructor for the pickup class
      *
-     * @note ISO 8601 date format is validated using the following method
-     * https://stackoverflow.com/questions/2201925/converting-iso-8601-compliant-string-to-java-util-date
-     *
      * @param personId
      * @param lat
      * @param lon
      * @param category
      * @param date
      * @param timeZoneId
+     * @note ISO 8601 date format is validated using the following method
+     * https://stackoverflow.com/questions/2201925/converting-iso-8601-compliant-string-to-java-util-date
      */
     public Pickup(String personId, double lat, double lon, int category,
-                  String date, String timeZoneId){
+                  String date, String timeZoneId) {
         this.personId = personId;
         this.latitude = lat;
         this.longitude = lon;
@@ -69,5 +68,21 @@ public class Pickup {
         Calendar cal = javax.xml.bind.DatatypeConverter.parseDateTime(date);
         this.pickupAt = cal.getTime();
         this.timeZoneId = timeZoneId;
+    }
+
+    public String toCsv() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(latitude);
+        sb.append(",");
+        sb.append(longitude);
+        sb.append(",");
+        sb.append(category);
+        sb.append(",");
+        sb.append(pickupAt);
+        sb.append(",");
+        sb.append(timeZoneId);
+
+        return sb.toString();
     }
 }

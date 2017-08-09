@@ -1,5 +1,8 @@
 package controllers;
 
+import models.Pickup;
+import models.Recipient;
+
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -89,5 +92,8 @@ public class FileController {
         } else return new File(filename).exists();
     }
 
-//    public void fileWriter()
+    public void fileWriter(Pickup pickup, Recipient recipient){
+        System.out.println(pickup.toCsv());
+        System.out.println(recipient.toCsv());
+    }
 }

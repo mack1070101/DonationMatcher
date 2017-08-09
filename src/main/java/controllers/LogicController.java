@@ -41,7 +41,7 @@ public class LogicController {
     public HashMap<String, ArrayList<Recipient>> findMatches() throws SQLException {
         HashMap<String, ArrayList<Recipient>> map = new HashMap<String, ArrayList<Recipient>>();
 
-        // Make array of pickups
+        // Make array of pickups  @TODO refactor to just pull ID
         ResultSet rs = dbc.statement.executeQuery("SELECT * from pickup;");
         ArrayList<Pickup> pickups = new ArrayList<Pickup>();
         while (rs.next()) {

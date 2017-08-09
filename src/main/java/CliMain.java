@@ -1,6 +1,7 @@
 import controllers.DatabaseController;
 import controllers.FileController;
 import controllers.LogicController;
+import models.Pickup;
 import models.Recipient;
 
 import java.io.IOException;
@@ -109,8 +110,8 @@ public class CliMain {
             Map.Entry pair = (Map.Entry)it.next();
             try{
                 for(Recipient recipient: map.get(pair.getKey())){
-                    System.out.println(recipient.getPersonId());
-
+                    Pickup pickup = dbC.getPickup((String) pair.getKey());
+                    outputFileController.fileWriter(pickup,recipient);
                 }
             }catch (Exception e){
                 System.out.println("\n");

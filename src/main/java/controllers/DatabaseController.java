@@ -210,20 +210,22 @@ public class DatabaseController {
 
     public Pickup getPickup(String personId) throws SQLException {
         String query = "SELECT * FROM pickup " +
-                "WHERE personId = " + personId + ";";
+                "WHERE personId = " + "'"+personId+"'" + ";";
+
         ResultSet resultSet = statement.executeQuery(query);
 
-        resultSet.next();
-        String person = resultSet.getString("personId");
-        double latitude = resultSet.getDouble("latitude");
-        double longitude = resultSet.getDouble("latitude");
-        int categories = resultSet.getInt("categories");
-        String pickupAt = resultSet.getString("pickupAt");
-        String timeZoneId = resultSet.getString("timeZoneId");
+        Pickup pickup = null;
+        while(resultSet.next()){
+            String person = resultSet.getString("personId");
+            double latitude = resultSet.getDouble("latitude");
+            double longitude = resultSet.getDouble("latitude");
+            int categories = resultSet.getInt("categories");
+            String pickupAt = resultSet.getString("pickupAt");
+            String timeZoneId = resultSet.getString("timeZoneId");
 
-        Pickup pickup = new Pickup(person, latitude, longitude, categories,pickupAt, timeZoneId);
-
-        System.out.println(query);
+            pickup = new Pickup(person, latitude, longitude, categories,pickupAt, timeZoneId);
+            return pickup;
+        }
         return pickup;
     }
 }
