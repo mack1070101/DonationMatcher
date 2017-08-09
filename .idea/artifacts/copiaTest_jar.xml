@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="copiaTest:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/copiaTest_jar</output-path>
+    <root id="archive" name="copiaTest.jar">
+      <element id="module-output" name="copiaTest" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/xerial/sqlite-jdbc/3.7.2/sqlite-jdbc-3.7.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/mail/mail/1.5.0-b01/mail-1.5.0-b01.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
