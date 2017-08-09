@@ -171,6 +171,7 @@ public class DatabaseController {
         // Pull out day of week
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E");
         String dayOfWeek = simpleDateFormat.format(pickup.getPickupAt());
+        String fullDayOfWeek;
         //Pull out time and set time zone
         simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone(pickup.getTimeZoneId()));
@@ -187,18 +188,25 @@ public class DatabaseController {
 
         if (dayOfWeek.equals("Sun")) {
             dateLine = "((sundayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
+            fullDayOfWeek = "sundayHours";
         } else if (dayOfWeek.equals("Mon")) {
             dateLine = "((mondayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
+                        fullDayOfWeek = "mondayHours";
         } else if (dayOfWeek.equals("Tue")) {
             dateLine = "((tuesdayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
+                        fullDayOfWeek = "tuesdayHours";
         } else if (dayOfWeek.equals("Wed")) {
             dateLine = "((wednesdayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
+                        fullDayOfWeek = "wednesdayHours";
         } else if (dayOfWeek.equals("Thu")) {
             dateLine = "((thursdayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
+                        fullDayOfWeek = "thursdayHours";
         } else if (dayOfWeek.equals("Fri")) {
             dateLine = "((fridayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
+                        fullDayOfWeek = "fridayHours";
         } else if (dayOfWeek.equals("Sat")) {
             dateLine = "((saturdayHours & " + binaryRepTime + ") = " + binaryRepTime + ")";
+                        fullDayOfWeek = "saturdayHours";
         } else {
             throw new IllegalArgumentException();
         }
@@ -223,7 +231,7 @@ public class DatabaseController {
                 "WHERE " + dateLine + " AND " +
                 restrictions + " AND " +
                 distance + " " +
-                "ORDER BY restrictions ASC;";
+                "ORDER BY restrictions ASC, " +fullDayOfWeek+" DESC;";
 
         return statement.executeQuery(query);
     }
