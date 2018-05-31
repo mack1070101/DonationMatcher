@@ -1,0 +1,7 @@
+models/PersonTest.class
+controllers/LogicControllerTest.class
+controllers/GeoControllerTest.class
+controllers/FileControllerTest.class
+models/RecipientTest.class
+controllers/DatabaseControllerTest.class
+models/PickupTest.class
