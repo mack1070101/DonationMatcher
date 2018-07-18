@@ -24,11 +24,8 @@ public class CliMain {
         String customerCSV;
         String recipientCSV;
 
-        System.out.println(" _______  _____   _____  _____ _______      _______ _______ _______ _______");
-        System.out.println(" |       |     | |_____]   |   |_____|         |    |______ |______    |   ");
-        System.out.println(" |_____  |_____| |       __|__ |     |         |    |______ ______|    |   ");
-
-        System.out.println("\nA programming challenge by Mackenzie Bligh");
+        System.out.println("Matching food pickups and donations");
+        System.out.println("A programming challenge by Mackenzie Bligh");
         System.out.println("See https://github.com/mack1070101/copiaTest/wiki for docs and details");
 
 
@@ -73,7 +70,7 @@ public class CliMain {
         dbC.createPickupTable();
         dbC.createRecipientTable();
 
-        //@TODO build into db controller
+        //TODO build into db controller
         while (true) {
             try {
                 int i = 0;
