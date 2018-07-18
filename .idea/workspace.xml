@@ -7,68 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84092a6c-866b-4148-8481-255abe2ce8ec" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/docs/result.csv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/CliMain.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/CliMain.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/allclasses-frame.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/allclasses-noframe.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/constant-values.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/DatabaseController.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/DatabaseController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/DatabaseControllerTest.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/DatabaseControllerTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/FileController.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/FileController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/FileControllerTest.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/FileControllerTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/GeoControllerTest.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/GeoControllerTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/LogicController.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/LogicController.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/LogicControllerTest.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/LogicControllerTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/package-frame.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/package-summary.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/controllers/package-tree.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/controllers/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/deprecated-list.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/help-doc.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-1.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-10.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-11.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-12.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-13.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-2.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-3.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-4.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-5.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-6.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-7.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-8.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-9.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index-files/index-9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/index.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/Person.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/Person.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/PersonTest.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/PersonTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/Pickup.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/Pickup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/PickupTest.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/PickupTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/Recipient.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/Recipient.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/RecipientTest.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/RecipientTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/package-frame.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/package-summary.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/models/package-tree.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/models/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/overview-frame.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/overview-summary.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/overview-tree.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/package-frame.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/package-summary.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/generatedDocs/package-tree.html" afterPath="$PROJECT_DIR$/docs/generatedDocs/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/CliMain.java" afterPath="$PROJECT_DIR$/src/main/java/CliMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-controllers.DatabaseControllerTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-controllers.DatabaseControllerTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-controllers.FileControllerTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-controllers.FileControllerTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-controllers.GeoControllerTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-controllers.GeoControllerTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-controllers.LogicControllerTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-controllers.LogicControllerTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-models.PersonTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-models.PersonTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-models.PickupTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-models.PickupTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-models.RecipientTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-models.RecipientTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/controllers.DatabaseControllerTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/controllers.DatabaseControllerTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/controllers.FileControllerTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/controllers.FileControllerTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/controllers.GeoControllerTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/controllers.GeoControllerTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/controllers.LogicControllerTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/controllers.LogicControllerTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/models.PersonTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/models.PersonTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/models.PickupTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/models.PickupTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/models.RecipientTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/models.RecipientTest.txt" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -85,17 +24,107 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/copiaTest$CliMain.coverage" NAME="CliMain Coverage Results" MODIFIED="1502265030479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/docs/testResults" userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CliMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CliMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/CliMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1326">
-              <caret line="37" column="82" lean-forward="false" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
+            <state relative-caret-position="501">
+              <caret line="105" column="54" lean-forward="true" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
               <folding>
-                <element signature="e#387#420#0" expanded="true" />
+                <element signature="e#983#1029#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/controllers/FileControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customers.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/testAssets/Customers.csv">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeoControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/controllers/GeoControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersonTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/models/PersonTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PickupTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/models/PickupTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="27" column="5" selection-start-line="23" selection-end-line="27" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LogicController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/LogicController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GeoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/GeoController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="643">
+              <caret line="57" column="37" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+              <folding>
+                <element signature="e#1921#1977#0" expanded="true" />
+                <element signature="e#1921#1977#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/DatabaseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="807">
+              <caret line="184" selection-start-line="184" selection-end-line="184" />
+              <folding>
+                <element signature="method#createRecipientTable#0;class#DatabaseController#0" />
+                <element signature="method#insertIntoPickupTable#0;class#DatabaseController#0" />
               </folding>
             </state>
           </provider>
@@ -126,11 +155,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="externalProjectsViewState">
-      <projects_view />
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -167,27 +191,16 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="y" value="-25" />
-    <option name="width" value="1370" />
-    <option name="height" value="795" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="878" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -195,213 +208,83 @@
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="copiaTest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="docs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CopiaTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CopiaTest" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="coverage" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="FullScreen" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="settings.editor.selected.configurable" value="coverage" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
